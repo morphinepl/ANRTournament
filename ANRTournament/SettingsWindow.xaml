@@ -1,0 +1,192 @@
+﻿<Window x:Class="ANRTournament.SettingsWindow"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        xmlns:ctrl="clr-namespace:ANRTournament.Controls"
+        lex:LocalizeDictionary.DesignCulture="pl"
+        lex:ResxLocalizationProvider.DefaultAssembly="ANRTournament"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources.StringTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="clr-namespace:ANRTournament.Converters"
+        xmlns:xctrl="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="" 
+        Height="565" Width="1024"        
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="None"
+        Background="{StaticResource WindowBackgroundBrush}" 
+        ShowInTaskbar="False" 
+        Icon="/ANRTournament;component/Resources/ANRTournament.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="17" />
+            <RowDefinition Height="465"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+
+        <!-- Region Title -->
+        <Border Grid.Row="0" 
+                Grid.ColumnSpan="2"
+                BorderBrush="Silver"
+                BorderThickness="1"
+                Margin="4,4,4,0"
+                CornerRadius="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{lex:Loc SettingsWindow_Opcje}"                    
+                           TextAlignment="Center"
+                           Grid.ColumnSpan="3"                           
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           FontSize="12" 
+                           Padding="0"/>
+
+                <Button x:Name="btnExit"
+                        Click="btnExit_Click"
+                        BorderThickness="0"
+                        Content="X"
+                        Height="15"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Background="Red"
+                        Grid.Column="2" 
+                        FontSize="7"
+                        Margin="3"
+                        ToolTip="{lex:Loc SettingsWindow_Zamknij}"/>
+            </Grid>
+        </Border>
+
+        <!-- EndRegion -->
+
+        <Button Click="btnSave_Click"
+                Height="30"
+                FontSize="12"
+                Width="150"
+                Margin="7,4,0,0"
+                Name="btnSave"
+                Grid.Row="3"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Resources/save_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                <TextBlock Text="{lex:Loc SettingsWindow_Zapisz}" Margin="10,0,0,0" />
+            </StackPanel>
+        </Button>
+
+        <Button Content="{lex:Loc SettingsWindow_Anuluj}"
+                Click="btnExit_Click"
+                FontSize="12"
+                Height="30"
+                Width="150"
+                Margin="0,4,7,0"
+                Name="btnCancel"
+                Grid.Row="3"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"/>
+
+        <Grid Grid.Row="2">
+            <CheckBox Content="{lex:Loc SettingsWindow_TabelaWynikowIRundy}"
+                      Margin="20"
+                      Foreground="White"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      FontSize="13"
+                      Padding="0"                      
+                      Name="chkMainTabSetting"/>
+
+            <CheckBox Content="{lex:Loc SettingsWindow_AutoSave}"
+                      Margin="20,53,0,0"
+                      Foreground="White"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      FontSize="13"
+                      Padding="0"                      
+                      Name="chkAutoSave"/>
+
+            <CheckBox Content="{lex:Loc SettingsWindow_RandomTieAfterPoints}"
+                      Margin="20,83,0,0"
+                      Foreground="White"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      FontSize="13"
+                      Padding="0"                      
+                      Name="chkRandomTieAfterPoints"/>
+
+            <GroupBox Margin="20,120,0,0"
+                      FontSize="13"
+                      Header="{lex:Loc SettingsWindow_BYEOptions}"
+                      Width="480"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left">
+                <Grid>
+                    <CheckBox Content="{lex:Loc SettingsWindow_BYEDlaPrzegranych}"
+                              Margin="30,20,0,20"
+                              Foreground="White"
+                              VerticalAlignment="Top"
+                              HorizontalAlignment="Left"
+                              FontSize="13"
+                              Padding="0"                      
+                              Name="chkBYEOnlyForLosers"/>
+
+                    <!--
+                    <Label Content="{lex:Loc SettingsWindow_BYE}"
+                           Margin="20,20,0,20"
+                           Foreground="White"
+                           HorizontalContentAlignment="Right"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           FontSize="13" Width="275" />
+
+                    <ctrl:GameScoreComboBox x:Name="ctrlBYEScore"
+                                            Width="70"
+                                            BorderBrush="White"
+                                            BorderThickness="1"
+                                            FontSize="13"
+                                            Margin="305,17,0,0"
+                                            Foreground="{StaticResource TextBrush}"
+                                            VerticalAlignment="Top"
+                                            HorizontalAlignment="Left"
+                                            Template="{StaticResource ComboBoxTemplate}"/>
+                    -->
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Margin="250,220,0,0"
+                      FontSize="13"
+                      Header="{lex:Loc SettingsWindow_SystemKostki}"
+                      Width="270"
+                      Height="160" Visibility="Visible"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left">
+                <Grid VerticalAlignment="Center">
+                    <RadioButton x:Name="rdbDisabled" GroupName="Dice" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc SettingsWindow_SystemKostki_Disabled}" Margin="10,10,0,0" Checked="rdbDiceSystem_CheckedChanged" Unchecked="rdbDiceSystem_CheckedChanged"/>
+                    <RadioButton x:Name="rdbRandom" GroupName="Dice" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc SettingsWindow_SystemKostki_OnlyRandom}" Margin="10,40,0,0" Checked="rdbDiceSystem_CheckedChanged" Unchecked="rdbDiceSystem_CheckedChanged"/>
+                    <RadioButton x:Name="rdbEnabled" GroupName="Dice" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc SettingsWindow_SystemKostki_Enabled}" Margin="10,70,0,10" Checked="rdbDiceSystem_CheckedChanged" Unchecked="rdbDiceSystem_CheckedChanged"/>
+                    <CheckBox x:Name="chkBYEHasDice" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc SettingsWindow_SystemKostki_BYEHasDice}" Margin="30,100,0,10" IsThreeState="False"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Margin="20,220,0,0"
+                      FontSize="13"
+                      Header="{lex:Loc SettingsWindow_WidocznoscKolumn}"
+                      Width="200"
+                      Height="160"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left">
+                <Grid VerticalAlignment="Center">
+                    <CheckBox x:Name="chkColumnRank" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc MainWindow_Rank}" Margin="10,10,0,0" IsThreeState="False"/>
+                    <CheckBox x:Name="chkColumnDC" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc MainWindow_DC}" Margin="10,40,0,0" IsThreeState="False"/>
+                    <CheckBox x:Name="chkColumnPayment" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc MainWindow_Payment}" Margin="10,70,0,10" IsThreeState="False"/>
+                    <CheckBox x:Name="chkColumnGalakta" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{lex:Loc MainWindow_G}" Margin="10,100,0,10" IsThreeState="False"/>
+                </Grid>
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</Window>

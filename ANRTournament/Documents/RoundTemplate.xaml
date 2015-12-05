@@ -1,0 +1,27 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia">
+    <Paragraph Name="Header" TextAlignment="Center">
+
+    </Paragraph>
+    <Table BorderBrush="Black" BorderThickness="1" CellSpacing="10" >
+        <TableRowGroup>
+            <TableRow>
+                <TableCell>
+                    <Paragraph>Gracz 1</Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>Gracz 2</Paragraph>
+                </TableCell>
+            </TableRow>
+           
+            <TableRow Name="xRowTemplate">
+                <TableCell>
+                    <Paragraph Name="Player1"></Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Name="Player2"></Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+</FlowDocument>

@@ -1,0 +1,298 @@
+﻿<UserControl x:Class="ANRTournament.Controls.PlayoffsControl8"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ctrl="clr-namespace:ANRTournament.Controls"
+             xmlns:conv="clr-namespace:ANRTournament.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="2000" 
+             d:DesignWidth="2500">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Border BorderBrush="Silver" BorderThickness="1" CornerRadius="8">
+        <ScrollViewer Margin="5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid Margin="0,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="118"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--<Border Grid.Column="0" Grid.RowSpan="31" Background="AliceBlue"/>
+                <Border Grid.Column="2" Grid.RowSpan="31" Background="PeachPuff"/>
+                <Border Grid.Column="4" Grid.RowSpan="31" Background="AliceBlue"/>
+                <Border Grid.Column="6" Grid.RowSpan="31" Background="Khaki"/>
+                <Border Grid.Column="8" Grid.RowSpan="31" Background="AliceBlue"/>-->
+
+                <ctrl:LineUpDownControl DataContext="{Binding}" Grid.Column="4" Grid.Row="1"/>
+                <ctrl:LineUpDownControl DataContext="{Binding}" Grid.Column="4" Grid.Row="9"/>
+
+                <ctrl:LineDownUpControl DataContext="{Binding}" Grid.Column="4" Grid.Row="5" />
+                <ctrl:LineDownUpControl DataContext="{Binding}" Grid.Column="4" Grid.Row="13"/>
+
+
+                <ctrl:LineUpDownControl   DataContext="{Binding}" Grid.Column="6" Grid.Row="3"/>
+                <ctrl:LineVerticalControl DataContext="{Binding}" Grid.Column="6" Grid.Row="5"/>
+
+                <ctrl:LineUpDownControl   DataContext="{Binding}" Grid.Column="4" Grid.Row="17"/>
+                <ctrl:LineDownUpControl   DataContext="{Binding}" Grid.Column="4" Grid.Row="24"/>
+                <ctrl:LineDownUpControl   DataContext="{Binding}" Grid.Column="6" Grid.Row="23"/>
+                <ctrl:LineUpDownControl   DataContext="{Binding}" Grid.Column="6" Grid.Row="19"/>
+                <ctrl:LineVerticalControl DataContext="{Binding}" Grid.Column="6" Grid.Row="9"/>
+                <ctrl:LineDownUpControl   DataContext="{Binding}" Grid.Column="6" Grid.Row="11"/>
+
+                <ctrl:LineUpDownControl   DataContext="{Binding}" Grid.Column="8" Grid.Row="7"/>
+
+                <ctrl:LineVerticalControl DataContext="{Binding}" Grid.Column="8" Grid.Row="11"/>
+                <ctrl:LineVerticalControl DataContext="{Binding}" Grid.Column="8" Grid.Row="13"/>
+                <ctrl:LineVerticalControl DataContext="{Binding}" Grid.Column="8" Grid.Row="15" Height="118"/>
+                <ctrl:LineVerticalControl DataContext="{Binding}" Grid.Column="8" Grid.Row="19"/>
+                <ctrl:LineDownUpControl DataContext="{Binding}" Grid.Column="8" Grid.Row="20"/>
+
+                <ctrl:LineHorizontalControl DataContext="{Binding}" Grid.Column="9" Grid.Row="9" Width="100"/>
+
+
+                <Border Grid.Column="2" Grid.Row="1" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="S01" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="S08" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="01" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_01}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="5" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="S04" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="S05" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="02" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_02}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="9" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="S02" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="S07" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="03" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_03}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="13" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="S03" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="S06" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="04" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_04}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+
+                <Border Grid.Column="4" Grid.Row="3" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W01" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="W02" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="05" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_05}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="4" Grid.Row="11" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W03" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="W04" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="06" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_06}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+
+                <Border Grid.Column="6" Grid.Row="7" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W05" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="W06" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="09" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_09}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+
+                <Border Grid.Column="8" Grid.Row="9" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W09" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="W13" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="14" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_14}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+                
+                <Border Grid.Column="12" Grid.Row="9" Background="Green" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W14" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="L14" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="15" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_15}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                
+                <Border Grid.Column="2" Grid.Row="17" Background="DarkRed" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="L01" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="L02" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="07" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_07}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="24" Background="DarkRed" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="L03" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="L04" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="08" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_08}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="4" Grid.Row="19" Background="DarkRed" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W07" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="L06" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="10" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_10}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="4" Grid.Row="23" Background="DarkRed" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W08" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="L05" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="11" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_11}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+
+                <Border Grid.Column="6" Grid.Row="20" Background="DarkRed" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W10" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="W11" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="12" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_12}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="8" Grid.Row="17" Background="DarkRed" CornerRadius="8" BorderBrush="Silver" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="W12" FontSize="16" VerticalAlignment="Top" Margin="4,4"/>
+                        <Label Content="L09" FontSize="16" VerticalAlignment="Bottom" Margin="4,4"/>
+                        <Label Content="13" FontSize="25" VerticalAlignment="Center" Margin="4,0"/>
+                        <ctrl:PlayoffGameControl DataContext="{Binding Path=Final_13}" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+            </Grid>
+        </ScrollViewer>
+    </Border>
+</UserControl>

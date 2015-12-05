@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="ANRTournament.Controls.RaceRadioButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="403" 
+             d:DesignWidth="150">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>          
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <RadioButton x:Name="rdbCorpHB"
+                     Grid.Row="0"
+                     VerticalAlignment="Center"                      
+                     Checked="rdbCorp_CheckedChange"
+                     Unchecked="rdbCorp_CheckedChange"/>
+        <Image x:Name="imgCorpHB"
+               Grid.Column="1"
+               Grid.Row="0"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgCorpHB_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbCorpJinteki"
+                     Grid.Row="1"
+                     VerticalAlignment="Center"
+                     Checked="rdbCorp_CheckedChange"
+                     Unchecked="rdbCorp_CheckedChange"/>
+        <Image x:Name="imgCorpJinteki"
+               Grid.Column="1"
+               Grid.Row="1"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgCorpJinteki_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbCorpNBN"
+                     Grid.Row="2"
+                     VerticalAlignment="Center"
+                     Checked="rdbCorp_CheckedChange"
+                     Unchecked="rdbCorp_CheckedChange"/>
+        <Image x:Name="imgCorpNBN"
+               Grid.Column="1"
+               Grid.Row="2"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgCorpNBN_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbCorpWeyland"
+                     Grid.Row="3"
+                     VerticalAlignment="Center"
+                     Checked="rdbCorp_CheckedChange"
+                     Unchecked="rdbCorp_CheckedChange"/>
+        <Image x:Name="imgCorpWeyland"
+               Grid.Column="1"
+               Grid.Row="3"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgCorpWeyland_MouseLeftButtonDown"/>
+       
+    </Grid>
+</UserControl>

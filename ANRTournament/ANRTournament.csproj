@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23BDB03A-C6A7-453C-B9BD-F09B32CD4A3B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ANRTournament</RootNamespace>
+    <AssemblyName>ANRTournament</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ANRTournament.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>lib\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="PieControls">
+      <HintPath>lib\PieControls.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension">
+      <HintPath>..\packages\WpfLocalizeExtension.2.1.3\lib\net35\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFToolkit.Extended, Version=1.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions">
+      <HintPath>..\packages\XAMLMarkupExtensions.1.1.6.1\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BigTimerWindow.xaml.cs">
+      <DependentUpon>BigTimerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IdentityComboBox.cs" />
+    <Compile Include="Controls\LanguageComboBox.cs" />
+    <Compile Include="Controls\PlayoffRoundComboBox.cs" />
+    <Compile Include="Controls\PlayoffsControl16.xaml.cs">
+      <DependentUpon>PlayoffsControl16.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayoffsControl8.xaml.cs">
+      <DependentUpon>PlayoffsControl8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RaceRunnerRadioButton.xaml.cs">
+      <DependentUpon>RaceRunnerRadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\IdGalaktaToImageConverter.cs" />
+    <Compile Include="Converters\LanguageToVisibilityConverter.cs" />
+    <Compile Include="Converters\PaymentToImageConverter.cs" />
+    <Compile Include="Converters\RaceRunnerToImageConverter.cs" />
+    <Compile Include="Converters\SuperBYEToImageConverter.cs" />
+    <Compile Include="DeckCheckWindow.xaml.cs">
+      <DependentUpon>DeckCheckWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GalaktaPlayersWindow.xaml.cs">
+      <DependentUpon>GalaktaPlayersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoWindow.xaml.cs">
+      <DependentUpon>InfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LiguePointsWindow.xaml.cs">
+      <DependentUpon>LiguePointsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\DoubleEliminationPlayoffs16.cs" />
+    <Compile Include="Objects\DoubleEliminationPlayoffs8.cs" />
+    <Compile Include="Objects\FinalResult.cs" />
+    <Compile Include="Objects\GalaktaSelectingPlayer.cs" />
+    <Compile Include="Objects\Identity.cs" />
+    <Compile Include="Objects\Int32ObservableCollection.cs" />
+    <Compile Include="Objects\LiguePoints.cs" />
+    <Compile Include="Objects\Settings.cs" />
+    <Compile Include="Objects\Tracer.cs" />
+    <Compile Include="Resources\StringTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringTable.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticsWindow.xaml.cs">
+      <DependentUpon>StatisticsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlTemplatePrinter.cs" />
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BigTimerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LineDownUpControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LineHorizontalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LineUpDownControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LineVerticalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlayoffGameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlayoffsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlayoffsControl16.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PlayoffsControl8.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RaceRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RaceRunnerRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RoundControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TimerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateRoundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Documents\RoundTemplate.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <Page Include="DeckCheckWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GalaktaPlayersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LiguePointsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Combinatorics\Combinations.cs" />
+    <Compile Include="Combinatorics\GenerateOption.cs" />
+    <Compile Include="Combinatorics\IMetaCollection.cs" />
+    <Compile Include="Combinatorics\Permutations.cs" />
+    <Compile Include="Combinatorics\SmallPrimeUtility.cs" />
+    <Compile Include="Combinatorics\Variations.cs" />
+    <Compile Include="Controls\LineDownUpControl.xaml.cs">
+      <DependentUpon>LineDownUpControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LineHorizontalControl.xaml.cs">
+      <DependentUpon>LineHorizontalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LineUpDownControl.xaml.cs">
+      <DependentUpon>LineUpDownControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LineVerticalControl.xaml.cs">
+      <DependentUpon>LineVerticalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayoffGameControl.xaml.cs">
+      <DependentUpon>PlayoffGameControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayoffModeComboBox.cs" />
+    <Compile Include="Controls\PlayoffsControl.xaml.cs">
+      <DependentUpon>PlayoffsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayoffScoreComboBox.cs" />
+    <Compile Include="Controls\RaceRadioButton.xaml.cs">
+      <DependentUpon>RaceRadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameScoreComboBox.cs" />
+    <Compile Include="Controls\RoundControl.xaml.cs">
+      <DependentUpon>RoundControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimerControl.xaml.cs">
+      <DependentUpon>TimerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TournamentImportanceComboBox.cs" />
+    <Compile Include="Converters\BooleanToImageConverter.cs" />
+    <Compile Include="Converters\PlayerActiveToColorConverter.cs" />
+    <Compile Include="Converters\PlayoffModeToVisibilityConverter.cs" />
+    <Compile Include="Converters\RaceCorpoToImageConverter.cs" />
+    <Compile Include="Converters\TabSizeConverter.cs" />
+    <Compile Include="CreateRoundWindow.xaml.cs">
+      <DependentUpon>CreateRoundWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatisticsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Themes\BureauBlack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\BureauBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\ExpressionDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\ExpressionLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\ShinyBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\ShinyRed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\WhistlerBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objects\ObservableCollectionExtensions.cs" />
+    <Compile Include="Objects\Game.cs" />
+    <Compile Include="Objects\Player.cs" />
+    <Compile Include="Objects\Playoffs.cs" />
+    <Compile Include="Objects\Round.cs" />
+    <Compile Include="Objects\Tournament.cs" />
+    <Compile Include="PlayerWindow.xaml.cs">
+      <DependentUpon>PlayerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StringTable.de.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StringTable.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StringTable.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StringTable.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StringTable.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringTable.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit_16.png" />
+    <Resource Include="Resources\new_16.png" />
+    <Resource Include="Resources\open_16.png" />
+    <Resource Include="Resources\saveas_16.png" />
+    <Resource Include="Resources\save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_16.png" />
+    <Resource Include="Resources\deactivate_16.png" />
+    <Resource Include="Resources\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\false_16.png" />
+    <Resource Include="Resources\true_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\Microsoft.Expression.Drawing.dll" />
+    <Content Include="lib\PieControls.dll" />
+    <Content Include="lib\WPFToolkit.Extended.dll" />
+    <Resource Include="Resources\orange_44.png" />
+    <Resource Include="Resources\ANRTournament.png" />
+    <Resource Include="Resources\corp-hb.png" />
+    <Resource Include="Resources\corp-jinteki.png" />
+    <Resource Include="Resources\corp-nbn.png" />
+    <Resource Include="Resources\corp-weyland.png" />
+    <Resource Include="Resources\runner-anarch.png" />
+    <Resource Include="Resources\runner-criminal.png" />
+    <Resource Include="Resources\runner-shaper.png" />
+    <Resource Include="Resources\splashScreen3.png" />
+    <Resource Include="Resources\splashScreen4.png" />
+    <Resource Include="Resources\splashScreen2.png" />
+    <Resource Include="Resources\zoom_16.png" />
+    <Resource Include="Resources\green_44.png" />
+    <Resource Include="Resources\red_44.png" />
+    <Resource Include="Resources\search_16.png" />
+    <Resource Include="Resources\settings_16.png" />
+    <Resource Include="Resources\ANRTournament.ico" />
+    <Resource Include="Resources\refresh_16.png" />
+    <Resource Include="ANRTournament.ico" />
+    <Resource Include="Resources\hand_16.png" />
+    <Resource Include="Resources\print_16.png" />
+    <Resource Include="Resources\clock_16.png" />
+    <Resource Include="Resources\pause_16.png" />
+    <Resource Include="Resources\restart_16.png" />
+    <Resource Include="Resources\start_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

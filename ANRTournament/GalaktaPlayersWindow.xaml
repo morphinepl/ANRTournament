@@ -1,0 +1,199 @@
+﻿<Window x:Class="ANRTournament.GalaktaPlayersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctrl="clr-namespace:ANRTournament.Controls"
+        xmlns:conv="clr-namespace:ANRTournament.Converters"
+        xmlns:xctrl="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Import graczy z Galakty" 
+        WindowStyle="None" 
+        mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource WindowBackgroundBrush}" 
+        Width="800" Height="600"
+        ShowInTaskbar="False" 
+        Icon="/ANRTournament;component/Resources/ANRTournament.png"
+        x:Name="wndImport">
+    <xctrl:BusyIndicator x:Name="busyIndicator">
+        <Grid>
+            <Grid.Resources>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <!-- Region Title -->
+            <Border Grid.Row="0"                 
+                BorderBrush="Silver"
+                BorderThickness="1"
+                Margin="4,4,4,0"
+                CornerRadius="4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Import graczy z Galakty"                    
+                       Grid.ColumnSpan="2"
+                       Foreground="White"
+                       HorizontalAlignment="Center"  
+                       VerticalAlignment="Center"
+                       FontSize="12" Padding="0"/>
+                </Grid>
+            </Border>
+
+            <!-- EndRegion -->
+
+            <Button Click="btnImport_Click"
+                Height="30"
+                FontSize="12"
+                Width="150"
+                Margin="12,4,0,0"
+                Name="btnImport"
+                Grid.Row="4"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/true_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                    <TextBlock Text="Importuj" Margin="10,0,0,0" />
+                </StackPanel>
+            </Button>
+
+            <Button Content="Anuluj"
+                Click="btnCancel_Click"
+                FontSize="12"
+                Height="30"
+                Width="150"
+                Margin="0,4,12,0"
+                Name="btnCancel"
+                Grid.Row="4"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"/>
+
+            <Button Click="btnSearch_Click"
+                    FontSize="12"
+                    Height="24"
+                    Width="50"
+                    Margin="200,5,0,0"
+                    Name="btnSearch"
+                    Grid.Row="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/search_16.png" Height="16" Width="16" Stretch="Uniform"/>                    
+                </StackPanel>
+            </Button>
+            <Button Click="btnDeleteFilter_Click"
+                    FontSize="12"
+                    Height="24"
+                    Width="50"
+                    Margin="260,5,0,0"
+                    Name="btnDeleteFilter"
+                    Grid.Row="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/deactivate_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+
+            <xctrl:WatermarkTextBox Width="180"                         
+                                    HorizontalAlignment="Left" 
+                                    VerticalAlignment="Center" 
+                                    Margin="12,0,0,0"
+                                    x:Name="txtFilter"
+                                    FontSize="14"
+                                    FontStyle="Italic"
+                                    Background="{x:Null}"
+                                    Grid.Row="1"
+                                    Foreground="{StaticResource TextBrush}"
+                                    Watermark="imię nazwisko lub nazwa"                                                        
+                                    BorderBrush="{StaticResource NormalBorderBrush}"
+                                    KeyDown="txtFilter_KeyDown"/>
+            
+            <DataGrid AutoGenerateColumns="False" 
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserReorderColumns="False"                      
+                      Grid.Row="2" 
+                      Margin="12,0,12,12" 
+                      Name="dgPlayers"
+                      ItemsSource="{Binding}"
+                      FontSize="14"                      
+                      RowHeaderWidth="0"      
+                      Background="{x:Null}"
+                      SelectionMode="Single"
+                      VerticalAlignment="Top"                                          
+                      Style="{StaticResource DataGridStyle}">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="Importuj"
+                                        x:Name="colSelected"
+                                        Width="Auto"
+                                        Binding="{Binding Path=Selected, Mode=TwoWay}">
+                    </DataGridCheckBoxColumn>
+
+                    <DataGridTextColumn Header="Nazwa"
+                                        x:Name="colAlias"
+                                        Width="*"
+                                        IsReadOnly="True"
+                                        Binding="{Binding Path=Player.Alias, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Margin" Value="7,0,0,0"/>
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Nazwisko"
+                                        x:Name="colSurnameName"
+                                        Width="*"
+                                        IsReadOnly="True"
+                                        Binding="{Binding Path=Player.Surname, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Margin" Value="7,0,7,0"/>
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Imię"
+                                        x:Name="colName"
+                                        Width="*"
+                                        IsReadOnly="True"
+                                        Binding="{Binding Path=Player.Name, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Margin" Value="7,0,7,0"/>
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Rank"
+                                        x:Name="colRankBeforeTournament"
+                                        Width="Auto"
+                                        IsReadOnly="True"
+                                        Binding="{Binding Path=Player.RankBeforeTournament, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextAlignment" Value="Right"/>
+                                <Setter Property="Margin" Value="7,0,7,0"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </xctrl:BusyIndicator>
+</Window>

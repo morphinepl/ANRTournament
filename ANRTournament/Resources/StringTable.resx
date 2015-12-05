@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutWindow_OProgramie" xml:space="preserve">
+    <value>O programie...</value>
+  </data>
+  <data name="AboutWindow_Programowanie" xml:space="preserve">
+    <value>Programowanie:</value>
+  </data>
+  <data name="AboutWindow_ZglaszanieProblemow" xml:space="preserve">
+    <value>Zgłaszanie problemów:</value>
+  </data>
+  <data name="BigTimerWindow_Timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="CreateRoundWindow_Anuluj" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="CreateRoundWindow_Gracz1" xml:space="preserve">
+    <value>Gracz 1</value>
+  </data>
+  <data name="CreateRoundWindow_Gracz2" xml:space="preserve">
+    <value>Gracz 2</value>
+  </data>
+  <data name="CreateRoundWindow_MozliweGry" xml:space="preserve">
+    <value>Możliwe gry</value>
+  </data>
+  <data name="CreateRoundWindow_NiepelnaRunda" xml:space="preserve">
+    <value>Niepełna runda!</value>
+  </data>
+  <data name="CreateRoundWindow_Runda" xml:space="preserve">
+    <value>Runda</value>
+  </data>
+  <data name="CreateRoundWindow_TworzenieRundy" xml:space="preserve">
+    <value>Tworzenie rundy</value>
+  </data>
+  <data name="CreateRoundWindow_Utworz" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
+  <data name="DeckCheckWindow_DC" xml:space="preserve">
+    <value>DC</value>
+  </data>
+  <data name="DeckCheckWindow_Deckcheck" xml:space="preserve">
+    <value>Deckcheck</value>
+  </data>
+  <data name="DeckCheckWindow_Frakcja" xml:space="preserve">
+    <value>Frakcja</value>
+  </data>
+  <data name="DeckCheckWindow_ImieINazwisko" xml:space="preserve">
+    <value>Imię i nazwisko</value>
+  </data>
+  <data name="DeckCheckWindow_LiczbaGraczyDoLosowania" xml:space="preserve">
+    <value>Liczba graczy do losowania</value>
+  </data>
+  <data name="DeckCheckWindow_Losuj" xml:space="preserve">
+    <value>Losuj</value>
+  </data>
+  <data name="DeckCheckWindow_Nazwa" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="MainWindow_B" xml:space="preserve">
+    <value>SoS</value>
+  </data>
+  <data name="MainWindow_Clear" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="MainWindow_Data" xml:space="preserve">
+    <value>Data:</value>
+  </data>
+  <data name="MainWindow_DC" xml:space="preserve">
+    <value>DC</value>
+  </data>
+  <data name="MainWindow_Deckcheck" xml:space="preserve">
+    <value>Deckcheck</value>
+  </data>
+  <data name="MainWindow_DeletePlayoffs" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć playoffy?</value>
+  </data>
+  <data name="MainWindow_DeleteRound" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć ostatnią rundę?</value>
+  </data>
+  <data name="MainWindow_Dodaj" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="MainWindow_DrukujKlasyfikacjeKoncowa" xml:space="preserve">
+    <value>Drukuj klasyfikację końcową</value>
+  </data>
+  <data name="MainWindow_DrukujRunde" xml:space="preserve">
+    <value>Drukuj rundę</value>
+  </data>
+  <data name="MainWindow_Edytuj" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="MainWindow_Eksport" xml:space="preserve">
+    <value>Eksport</value>
+  </data>
+  <data name="MainWindow_FrakcjaCorpo" xml:space="preserve">
+    <value>Korporacja</value>
+  </data>
+  <data name="MainWindow_Gracze" xml:space="preserve">
+    <value>Gracze</value>
+  </data>
+  <data name="MainWindow_ImieINazwisko" xml:space="preserve">
+    <value>Imię i nazwisko</value>
+  </data>
+  <data name="MainWindow_KlasyfikacjaKoncowa" xml:space="preserve">
+    <value>Klasyfikacja końcowa</value>
+  </data>
+  <data name="MainWindow_KlasyfikacjaKoncowaTXTFormatted" xml:space="preserve">
+    <value>Klasyfikacja końcowa -&gt; TXT (tabela formatowana)</value>
+  </data>
+  <data name="MainWindow_LastRoundNotEnd" xml:space="preserve">
+    <value>Ostatnia runda nie została zakończona.
+
+Nie można utworzyć nowej.</value>
+  </data>
+  <data name="MainWindow_LiczbaGier" xml:space="preserve">
+    <value>L. gier</value>
+  </data>
+  <data name="MainWindow_MB" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="MainWindow_Minimalizuj" xml:space="preserve">
+    <value>Minimalizuj</value>
+  </data>
+  <data name="MainWindow_NazwaTurnieju" xml:space="preserve">
+    <value>Nazwa:</value>
+  </data>
+  <data name="MainWindow_Nick" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="MainWindow_NieMoznaWygenerowacWiecejRund" xml:space="preserve">
+    <value>Nie można wygenerować więcej rund</value>
+  </data>
+  <data name="MainWindow_NiezapisaneDane" xml:space="preserve">
+    <value>Wszystkie niezapisane dane obecnego turnieju zostaną utracone.
+Czy chcesz kontynuować?</value>
+  </data>
+  <data name="MainWindow_NowaRunda" xml:space="preserve">
+    <value>Nowa runda</value>
+  </data>
+  <data name="MainWindow_Nowy" xml:space="preserve">
+    <value>Nowy...</value>
+  </data>
+  <data name="MainWindow_Opcje" xml:space="preserve">
+    <value>Opcje</value>
+  </data>
+  <data name="MainWindow_OProgramie" xml:space="preserve">
+    <value>O programie...</value>
+  </data>
+  <data name="MainWindow_Otworz" xml:space="preserve">
+    <value>Otwórz...</value>
+  </data>
+  <data name="MainWindow_PlayerDeactivate" xml:space="preserve">
+    <value>Czy na pewno chcesz dezaktywować zaznaczonego gracza?</value>
+  </data>
+  <data name="MainWindow_PlayerDelete" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć zaznaczonego gracza?</value>
+  </data>
+  <data name="MainWindow_PlayerExists" xml:space="preserve">
+    <value>Podana nazwa gracza już istnieje w tabeli</value>
+  </data>
+  <data name="MainWindow_PlikiGraczy" xml:space="preserve">
+    <value>Pliki graczy</value>
+  </data>
+  <data name="MainWindow_PlikiTurniejow" xml:space="preserve">
+    <value>Pliki turniejów</value>
+  </data>
+  <data name="MainWindow_PlikiTXT" xml:space="preserve">
+    <value>Pliki txt</value>
+  </data>
+  <data name="MainWindow_Pomoc" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="MainWindow_Przelicz" xml:space="preserve">
+    <value>Przelicz</value>
+  </data>
+  <data name="MainWindow_Punkty" xml:space="preserve">
+    <value>Punkty</value>
+  </data>
+  <data name="MainWindow_Rank" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+  <data name="MainWindow_ResetTournament" xml:space="preserve">
+    <value>Wczytanie graczy spowoduje wyresetowanie turnieju.
+Czy chcesz kontynuować?</value>
+  </data>
+  <data name="MainWindow_Rundy" xml:space="preserve">
+    <value>Rundy</value>
+  </data>
+  <data name="MainWindow_RundyTXTFormatted" xml:space="preserve">
+    <value>Rundy -&gt; TXT (tabela formatowana)</value>
+  </data>
+  <data name="MainWindow_SredniRankGraczy" xml:space="preserve">
+    <value>Średni rank. graczy:</value>
+  </data>
+  <data name="MainWindow_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="MainWindow_TabelaWynikow" xml:space="preserve">
+    <value>Tabela wyników</value>
+  </data>
+  <data name="MainWindow_TabelaWynikowTXT" xml:space="preserve">
+    <value>Tabela wyników -&gt; TXT</value>
+  </data>
+  <data name="MainWindow_TabelaWynikowTXTFormatted" xml:space="preserve">
+    <value>Tabela wyników -&gt; TXT (tabela formatowana)</value>
+  </data>
+  <data name="MainWindow_Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="MainWindow_Turniej" xml:space="preserve">
+    <value>Turniej</value>
+  </data>
+  <data name="MainWindow_TworzenieRundyRecznie" xml:space="preserve">
+    <value>Tworzenie rundy ręcznie</value>
+  </data>
+  <data name="MainWindow_Ustawienia" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="MainWindow_Usun" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="MainWindow_UsunOstRunde" xml:space="preserve">
+    <value>Usuń ost. rundę</value>
+  </data>
+  <data name="MainWindow_Wczytaj" xml:space="preserve">
+    <value>Wczytaj...</value>
+  </data>
+  <data name="MainWindow_WRP" xml:space="preserve">
+    <value>W-R-P</value>
+  </data>
+  <data name="MainWindow_Wyszukaj" xml:space="preserve">
+    <value>Wyszukaj ...</value>
+  </data>
+  <data name="MainWindow_Zamknij" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="MainWindow_Zapisz" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="MainWindow_ZapiszJako" xml:space="preserve">
+    <value>Zapisz jako...</value>
+  </data>
+  <data name="PlayoffRoundComboBox_Final" xml:space="preserve">
+    <value>Finał</value>
+  </data>
+  <data name="RoundControl_DrukujRunde" xml:space="preserve">
+    <value>Drukuj rundę</value>
+  </data>
+  <data name="RoundControl_Edytuj" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="RoundControl_Gracz1" xml:space="preserve">
+    <value>Gracz 1</value>
+  </data>
+  <data name="RoundControl_Gracz2" xml:space="preserve">
+    <value>Gracz 2</value>
+  </data>
+  <data name="RoundControl_Nr" xml:space="preserve">
+    <value>Nr</value>
+  </data>
+  <data name="RoundControl_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RoundControl_Runda" xml:space="preserve">
+    <value>Runda</value>
+  </data>
+  <data name="RoundControl_Wynik" xml:space="preserve">
+    <value>Wynik</value>
+  </data>
+  <data name="RoundTemplate_Gracz1" xml:space="preserve">
+    <value>Gracz 1</value>
+  </data>
+  <data name="RoundTemplate_Gracz2" xml:space="preserve">
+    <value>Gracz 2</value>
+  </data>
+  <data name="TimerControl_Pauza" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="TimerControl_Restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="TimerControl_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TimerControl_UstawCzas" xml:space="preserve">
+    <value>Ustaw czas [minuty]</value>
+  </data>
+  <data name="TimerControl_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Tournament_ErrorGen" xml:space="preserve">
+    <value>Błąd generowania klasyfikacji końcowej</value>
+  </data>
+  <data name="Tournament_ErrorOpenPlayers" xml:space="preserve">
+    <value>Błąd otwierania pliku graczy.
+Ścieżka: {0}
+{1}</value>
+  </data>
+  <data name="Tournament_ErrorOpenTournament" xml:space="preserve">
+    <value>Błąd otwierania pliku turnieju.
+Ścieżka: {0}
+{1}</value>
+  </data>
+  <data name="Tournament_ErrorPoints" xml:space="preserve">
+    <value>Nie ustawiono wszystkich wyników</value>
+  </data>
+  <data name="Tournament_ErrorSavePlayers" xml:space="preserve">
+    <value>Błąd zapisu pliku graczy.
+Ścieżka: {0}
+{1}</value>
+  </data>
+  <data name="Tournament_ErrorSaveTournament" xml:space="preserve">
+    <value>Błąd zapisu pliku turnieju.
+Ścieżka: {0}
+{1}</value>
+  </data>
+  <data name="MainWindow_Playoffs" xml:space="preserve">
+    <value>Playoff'y</value>
+  </data>
+  <data name="PlayerWindow_Anuluj" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="PlayerWindow_DaneGracza" xml:space="preserve">
+    <value>Dane gracza</value>
+  </data>
+  <data name="PlayerWindow_Imie" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="PlayerWindow_Nazwisko" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="PlayerWindow_Nick" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="PlayerWindow_PoleNazwaJestObowiązkowe" xml:space="preserve">
+    <value>Pole 'Nazwa' jest obowiązkowe</value>
+  </data>
+  <data name="PlayerWindow_PoleRankingMusiBycWartosciaLiczbową" xml:space="preserve">
+    <value>Pole 'Ranking' musi być wartością liczbową (całkowitą)</value>
+  </data>
+  <data name="PlayerWindow_Ranking" xml:space="preserve">
+    <value>Ranking</value>
+  </data>
+  <data name="PM_Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="PM_Information" xml:space="preserve">
+    <value>Informacja</value>
+  </data>
+  <data name="PM_Warning" xml:space="preserve">
+    <value>Uwaga</value>
+  </data>
+  <data name="SettingsWindow_Anuluj" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="SettingsWindow_Opcje" xml:space="preserve">
+    <value>Opcje</value>
+  </data>
+  <data name="SettingsWindow_TabelaWynikowIRundy" xml:space="preserve">
+    <value>Tabela wyników i rundy na oddzielnych zakładkach (po zmianie opcji należy zrestartować program)</value>
+  </data>
+  <data name="SettingsWindow_Zamknij" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="SettingsWindow_Zapisz" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="MainWindow_CMenu_ActivatePlayer" xml:space="preserve">
+    <value>Przywróć gracza</value>
+  </data>
+  <data name="MainWindow_CMenu_CorpoHB" xml:space="preserve">
+    <value>Haas-Bioroid</value>
+  </data>
+  <data name="MainWindow_CMenu_CorpoWeyland" xml:space="preserve">
+    <value>Weyland Consortium</value>
+  </data>
+  <data name="MainWindow_CMenu_DeletePlayer" xml:space="preserve">
+    <value>Usuń gracza</value>
+  </data>
+  <data name="MainWindow_Gracz" xml:space="preserve">
+    <value>Gracz</value>
+  </data>
+  <data name="MainWindow_FrakCorp" xml:space="preserve">
+    <value>Korp</value>
+  </data>
+  <data name="MainWindow_LG" xml:space="preserve">
+    <value>LG</value>
+  </data>
+  <data name="MainWindow_1_16" xml:space="preserve">
+    <value>1 / 16 finału</value>
+  </data>
+  <data name="MainWindow_1_2" xml:space="preserve">
+    <value>Półfinały</value>
+  </data>
+  <data name="MainWindow_1_4" xml:space="preserve">
+    <value>Ćwierćfinały</value>
+  </data>
+  <data name="MainWindow_1_8" xml:space="preserve">
+    <value>1 / 8 finału</value>
+  </data>
+  <data name="MainWindow_Final" xml:space="preserve">
+    <value>Finał</value>
+  </data>
+  <data name="MainWindow_GraOTrzecieMiejsce" xml:space="preserve">
+    <value>Gra o trzecie miejsce</value>
+  </data>
+  <data name="MainWindow_Statistics" xml:space="preserve">
+    <value>Statystyki</value>
+  </data>
+  <data name="StatisticsWindow_Title" xml:space="preserve">
+    <value>Statystyki</value>
+  </data>
+  <data name="StatisticsWindow_RozkladStolic" xml:space="preserve">
+    <value>Rozkład frakcji</value>
+  </data>
+  <data name="StatisticsWindow_RozkladStolicTop" xml:space="preserve">
+    <value>Rozkład frakcji TOP 16</value>
+  </data>
+  <data name="PM_No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="PM_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PM_Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="SettingsWindow_BYE" xml:space="preserve">
+    <value>Liczenie małych punktów (+/-) dla wyniku BYE:</value>
+  </data>
+  <data name="SettingsWindow_SystemKostki" xml:space="preserve">
+    <value>System "kostki"</value>
+  </data>
+  <data name="SettingsWindow_SystemKostki_Disabled" xml:space="preserve">
+    <value>Wyłączony</value>
+  </data>
+  <data name="SettingsWindow_SystemKostki_Enabled" xml:space="preserve">
+    <value>Pełny</value>
+  </data>
+  <data name="SettingsWindow_SystemKostki_OnlyRandom" xml:space="preserve">
+    <value>Tylko losowo</value>
+  </data>
+  <data name="MainWindow_LiguePoints" xml:space="preserve">
+    <value>Punkty ligowe</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce1" xml:space="preserve">
+    <value>1sze</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce2" xml:space="preserve">
+    <value>2gie</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce3" xml:space="preserve">
+    <value>3cie</value>
+  </data>
+  <data name="LiguePointsWindow_NajlepszyRasa" xml:space="preserve">
+    <value>Najlepszy we frakcji</value>
+  </data>
+  <data name="LiguePointsWindow_Opcje" xml:space="preserve">
+    <value>Opcje punktacji</value>
+  </data>
+  <data name="LiguePointsWindow_Przegrana" xml:space="preserve">
+    <value>Przegrana</value>
+  </data>
+  <data name="LiguePointsWindow_Remis" xml:space="preserve">
+    <value>Remis</value>
+  </data>
+  <data name="LiguePointsWindow_Title" xml:space="preserve">
+    <value>Punkty ligowe</value>
+  </data>
+  <data name="LiguePointsWindow_Uczestnictwo" xml:space="preserve">
+    <value>Uczestnictwo</value>
+  </data>
+  <data name="LiguePointsWindow_Wygrana_1_0" xml:space="preserve">
+    <value>Wygrana 1:0</value>
+  </data>
+  <data name="LiguePointsWindow_Wygrana_2_0" xml:space="preserve">
+    <value>Wygrana 2:0</value>
+  </data>
+  <data name="LiguePointsWindow_Wygrana_2_1" xml:space="preserve">
+    <value>Wygrana 2:1</value>
+  </data>
+  <data name="LiguePointsWindow_Wygrana_BYE" xml:space="preserve">
+    <value>BYE</value>
+  </data>
+  <data name="LiguePointsWindow_MalePunkty" xml:space="preserve">
+    <value>Suma małych punktów</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce4" xml:space="preserve">
+    <value>4te</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce5" xml:space="preserve">
+    <value>5te</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce6" xml:space="preserve">
+    <value>6te</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce7" xml:space="preserve">
+    <value>7me</value>
+  </data>
+  <data name="LiguePointsWindow_Miejsce8" xml:space="preserve">
+    <value>8me</value>
+  </data>
+  <data name="LiguePointsWindow_Zapisz" xml:space="preserve">
+    <value>Zapisz do pliku</value>
+  </data>
+  <data name="LiguePointsWindow_Suma" xml:space="preserve">
+    <value>Suma</value>
+  </data>
+  <data name="MainWindow_CMenu_Disqualification" xml:space="preserve">
+    <value>Dyskwalifikacja</value>
+  </data>
+  <data name="MainWindow_PlayerActivate" xml:space="preserve">
+    <value>Czy na pewno chcesz przywrócić zaznaczonego gracza?</value>
+  </data>
+  <data name="MainWindow_PlayerDisqualification" xml:space="preserve">
+    <value>Czy na pewno chcesz zdyskwalifikować zaznaczonego gracza?</value>
+  </data>
+  <data name="MainWindow_K" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="MainWindow_Payment" xml:space="preserve">
+    <value>€</value>
+  </data>
+  <data name="SettingsWindow_WidocznoscKolumn" xml:space="preserve">
+    <value>Widoczność kolumn</value>
+  </data>
+  <data name="MainWindow_G" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="MainWindow_CMenu_Payment" xml:space="preserve">
+    <value>Płatność</value>
+  </data>
+  <data name="SettingsWindow_BYEDlaPrzegranych" xml:space="preserve">
+    <value>BYE tylko dla przegranych</value>
+  </data>
+  <data name="SettingsWindow_AutoSave" xml:space="preserve">
+    <value>Auto-zapis co rundę</value>
+  </data>
+  <data name="SettingsWindow_BYEOptions" xml:space="preserve">
+    <value>Opcje dla BYE'a</value>
+  </data>
+  <data name="SettingsWindow_SystemKostki_BYEHasDice" xml:space="preserve">
+    <value>Oznacz BYE jako zaczynający</value>
+  </data>
+  <data name="MainWindow_FrakcjaRunner" xml:space="preserve">
+    <value>Runner</value>
+  </data>
+  <data name="MainWindow_FrakRun" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="MainWindow_CMenu_CorpoJinteki" xml:space="preserve">
+    <value>Jinteki</value>
+  </data>
+  <data name="MainWindow_CMenu_CorpoNBN" xml:space="preserve">
+    <value>NBN</value>
+  </data>
+  <data name="MainWindow_CMenu_RunnerAnarch" xml:space="preserve">
+    <value>Anarch</value>
+  </data>
+  <data name="MainWindow_CMenu_RunnerCriminal" xml:space="preserve">
+    <value>Criminal</value>
+  </data>
+  <data name="MainWindow_CMenu_RunnerShaper" xml:space="preserve">
+    <value>Shaper</value>
+  </data>
+  <data name="LiguePointsWindow_Wygrana" xml:space="preserve">
+    <value>Wygrana</value>
+  </data>
+  <data name="RoundControl_DrugaGra" xml:space="preserve">
+    <value>Tylko pierwsza gra</value>
+  </data>
+  <data name="SettingsWindow_RandomTieAfterPoints" xml:space="preserve">
+    <value>Użyj losowego tiebreakera bezpośrednio po punktach (tylko do losowania rund)</value>
+  </data>
+  <data name="MainWindow_StartPlayoffsTop16" xml:space="preserve">
+    <value>Start TOP16</value>
+  </data>
+  <data name="MainWindow_StartPlayoffsTop8" xml:space="preserve">
+    <value>Start TOP8</value>
+  </data>
+  <data name="MainWindow_KlasyfikacjaKoncowaHTML" xml:space="preserve">
+    <value>Klasyfikacja końcowa -&gt; HTML</value>
+  </data>
+  <data name="MainWindow_TabelaWynikowHTML" xml:space="preserve">
+    <value>Tabela wyników -&gt; HTML</value>
+  </data>
+  <data name="MainWindow_PlikiHTML" xml:space="preserve">
+    <value>Pliki HTML</value>
+  </data>
+</root>

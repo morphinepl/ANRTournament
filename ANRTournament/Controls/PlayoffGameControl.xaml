@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="ANRTournament.Controls.PlayoffGameControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:conv="clr-namespace:ANRTournament.Converters"
+             xmlns:ctrl="clr-namespace:ANRTournament.Controls"
+             xmlns:local="clr-namespace:ANRTournament.Objects"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             Background="{x:Null}" 
+             FontSize="13" Height="115" Width="380">
+    <UserControl.Resources>
+        <conv:RaceCorpoToImageConverter x:Key="RaceCorpoToImageConverter"/>
+        <conv:RaceRunnerToImageConverter x:Key="RaceRunnerToImageConverter"/>
+        <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <conv:BooleanToNVisibilityConverter x:Key="BooleanToNVisibilityConverter"/>
+        <local:Int32ObservableCollection x:Key="smallPointsList">
+            <sys:Int32>0</sys:Int32>
+            <sys:Int32>1</sys:Int32>
+            <sys:Int32>2</sys:Int32>
+            <sys:Int32>3</sys:Int32>
+            <sys:Int32>4</sys:Int32>
+            <sys:Int32>5</sys:Int32>
+            <sys:Int32>6</sys:Int32>
+            <sys:Int32>10</sys:Int32>
+        </local:Int32ObservableCollection>
+        <sys:Double x:Key="MarginLeftValue">2</sys:Double>
+        <sys:Double x:Key="MarginRightValue">2</sys:Double>
+        <sys:Double x:Key="MarginTopValue">2</sys:Double>
+        <sys:Double x:Key="MarginBottomValue">2</sys:Double>
+        <Thickness x:Key="MarginResource" Left="{StaticResource MarginLeftValue}" Top="{StaticResource MarginTopValue}" Right="{StaticResource MarginRightValue}" Bottom="{StaticResource MarginBottomValue}" />
+    </UserControl.Resources>
+
+    <Border>
+        <Grid Margin="5">
+            <Grid.Style>
+                <Style TargetType="{x:Type Grid}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=DataContext, RelativeSource={RelativeSource Self}}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="115"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="1">
+                <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player1RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}" Margin="{StaticResource MarginResource}"/>
+                <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player1RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}" Margin="{StaticResource MarginResource}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="3">
+                <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player2RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}" Margin="{StaticResource MarginResource}"/>
+                <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player2RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}" Margin="{StaticResource MarginResource}"/>
+            </StackPanel>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="BYE" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="{StaticResource TextBrush}"/>
+                <TextBlock Text=":" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}" Foreground="{StaticResource TextBrush}"/>
+                <TextBlock Text=":" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}" Foreground="{StaticResource TextBrush}"/>
+                <TextBlock Text=":" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}" Foreground="{StaticResource TextBrush}" FontWeight="Bold"/>
+                <ComboBox SelectedValue="{Binding Path=Player1Score1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{StaticResource smallPointsList}" Grid.Column="0" Grid.Row="0" Height="32" Margin="{StaticResource MarginResource}" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}"/>
+                <ComboBox SelectedValue="{Binding Path=Player1Score2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{StaticResource smallPointsList}" Grid.Column="0" Grid.Row="1" Height="32" Margin="{StaticResource MarginResource}" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}"/>
+                <ComboBox SelectedValue="{Binding Path=Player2Score1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{StaticResource smallPointsList}" Grid.Column="2" Grid.Row="0" Height="32" Margin="{StaticResource MarginResource}" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}"/>
+                <ComboBox SelectedValue="{Binding Path=Player2Score2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{StaticResource smallPointsList}" Grid.Column="2" Grid.Row="1" Height="32" Margin="{StaticResource MarginResource}" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}"/>
+
+                <TextBlock Text="{Binding Path=Player1ScoreSum, Mode=OneWay}" Grid.Column="0" Grid.Row="2" Height="Auto" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}" TextAlignment="Center" Foreground="{StaticResource TextBrush}" FontWeight="Bold" Margin="7"/>
+                <TextBlock Text="{Binding Path=Player2ScoreSum, Mode=OneWay}" Grid.Column="2" Grid.Row="2" Height="Auto" Visibility="{Binding Path=IsBYE,Mode=OneWay,Converter={StaticResource BooleanToNVisibilityConverter}}" TextAlignment="Center" Foreground="{StaticResource TextBrush}" FontWeight="Bold" Margin="7"/>
+
+            </Grid>
+
+            <TextBlock Grid.Column="0"
+                       Margin="5,0,5,0"
+                       TextAlignment="Right"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Height="Auto"
+                       MinWidth="45"
+                       MaxWidth="70"
+                       TextWrapping="Wrap"                       
+                       Text="{Binding Path=Player1Alias, Mode=OneWay}">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                             <DataTrigger Binding="{Binding Path=Player1Dice, Mode=OneWay}" Value="False">
+                                 <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                             </DataTrigger>
+                             <DataTrigger Binding="{Binding Path=Player1Dice, Mode=OneWay}" Value="True">
+                                 <Setter Property="Foreground" Value="Orange" />
+                             </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBlock Grid.Column="4"
+                       Margin="5,0,5,0"
+                       TextAlignment="Left"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Height="Auto"
+                       MinWidth="45"
+                       MaxWidth="70"
+                       TextWrapping="Wrap"
+                       Text="{Binding Path=Player2Alias, Mode=OneWay}">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                             <DataTrigger Binding="{Binding Path=Player2Dice, Mode=OneWay}" Value="False">
+                                 <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                             </DataTrigger>
+                             <DataTrigger Binding="{Binding Path=Player2Dice, Mode=OneWay}" Value="True">
+                                 <Setter Property="Foreground" Value="Orange" />
+                             </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </Grid>
+    </Border>
+</UserControl>

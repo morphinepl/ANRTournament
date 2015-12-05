@@ -1,0 +1,1226 @@
+﻿<Window x:Class="ANRTournament.MainWindow"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="pl"
+        lex:ResxLocalizationProvider.DefaultAssembly="ANRTournament"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources.StringTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="clr-namespace:ANRTournament.Converters"
+        xmlns:ctrl="clr-namespace:ANRTournament.Controls"
+        xmlns:xctrl="http://schemas.xceed.com/wpf/xaml/toolkit"        
+        Height="424" 
+        Width="1295" 
+        WindowState="Maximized" 
+        WindowStyle="None"
+        Background="{StaticResource WindowBackgroundBrush}" 
+        Icon="/ANRTournament;component/Resources/ANRTournament.png">
+    <Window.CommandBindings>
+        <CommandBinding Command="Save" Executed="CommandBinding_Executed" />
+        <CommandBinding Command="Open" Executed="CommandBinding_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control" Command="Save"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
+    </Window.InputBindings>
+    <xctrl:BusyIndicator x:Name="BusyIndicator">
+        <Grid>
+            <Grid.Resources>
+                <conv:RaceCorpoToImageConverter x:Key="RaceCorpoToImageConverter"/>
+                <conv:RaceRunnerToImageConverter x:Key="RaceRunnerToImageConverter"/>
+                <conv:BooleanToImageConverter x:Key="BooleanToImageConverter"/>
+                <conv:PlayerActiveToColorConverter x:Key="PlayerActiveToColorConverter"/>
+                <conv:IdGalaktaToImageConverter x:Key="IdGalaktaToImageConverter"/>
+                <conv:PaymentToImageConverter x:Key="PaymentToImageConverter"/>
+                <conv:SuperBYEToImageConverter x:Key="SuperBYEToImageConverter"/>
+                <conv:LanguageToVisibilityConverter x:Key="LanguageToVisibilityConverter"/>
+                <conv:PlayoffDEModeToVisibilityConverter x:Key="PlayoffDEModeToVisibilityConverter"/>
+                <conv:PlayoffTop16ModeToVisibilityConverter x:Key="PlayoffTop16ModeToVisibilityConverter"/>
+                <conv:PlayoffTop8ModeToVisibilityConverter x:Key="PlayoffTop8ModeToVisibilityConverter"/>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="24" />
+            </Grid.RowDefinitions>
+
+            <!-- Region Title Bar -->
+
+            <Border Grid.Row="0" 
+                    Grid.ColumnSpan="2"
+                    BorderBrush="Silver"
+                    BorderThickness="1"
+                    Margin="12,4,12,0"
+                    CornerRadius="4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="lblVersion"
+                           Grid.Column="1"
+                           Content="ANR Tournament ver. {0}" 
+                           Foreground="White"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           FontSize="12" />
+
+                    <ctrl:LanguageComboBox 
+                            x:Name="cmbLanguage"
+                            FontSize="12"
+                            Template="{StaticResource ComboBoxTemplate}"
+                            Foreground="{StaticResource TextBrush}"
+                            Grid.Column="2" 
+                            Margin="3,3,23,3"/>
+
+                    <Button x:Name="btnMinimize"
+                            Click="btnMinimize_Click"
+                            BorderThickness="0"
+                            Content="-"
+                            Height="15"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Background="DarkOrange"
+                            Grid.Column="3" 
+                            FontSize="13"
+                            Margin="3"
+                            ToolTip="{lex:Loc MainWindow_Minimalizuj}"/>
+
+                    <Button x:Name="btnExit"
+                            Click="btnExit_Click"
+                            BorderThickness="0"
+                            Content="X"
+                            Height="15"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Background="Red"
+                            Grid.Column="5" 
+                            FontSize="7"
+                            Margin="3"
+                            ToolTip="{lex:Loc MainWindow_Zamknij}"/>
+
+                    <Menu IsMainMenu="True" 
+                          HorizontalAlignment="Left" 
+                          Margin="2,2,0,2" 
+                          FontSize="12">
+                        <MenuItem Header="{lex:Loc MainWindow_Turniej}">
+                            <MenuItem Name="mniNew" Header="{lex:Loc MainWindow_Nowy}" Click="mniNew_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/new_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem Name="mniOpen" Header="{lex:Loc MainWindow_Otworz}" Click="mniOpen_Click" ToolTip="Ctrl + O">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/open_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem Name="mniSave" Header="{lex:Loc MainWindow_Zapisz}" Click="mniSave_Click" ToolTip="Ctrl + S">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/save_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Name="mniSaveAs" Header="{lex:Loc MainWindow_ZapiszJako}" Click="mniSaveAs_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/saveas_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem Name="mniStatistics" Header="{lex:Loc MainWindow_Statistics}" Click="mniStatistics_Click"/>
+                            <Separator />
+                            <MenuItem Name="mniLiguePoints" Header="{lex:Loc MainWindow_LiguePoints}" Click="mniLiguePoints_Click"/>
+                            <Separator />
+                            <MenuItem Name="mniExit" Header="{lex:Loc MainWindow_Zamknij}" Click="mniExit_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/exit_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{lex:Loc MainWindow_Gracze}">
+                            <MenuItem Name="mniPlayersImport" Header="{lex:Loc MainWindow_Wczytaj}" Click="mniPlayersImport_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/open_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem Name="mniPlayersSave" Header="{lex:Loc MainWindow_Zapisz}" Click="mniPlayersSave_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/save_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Name="mniPlayersDeckcheck" Header="{lex:Loc MainWindow_Deckcheck}" Click="mniPlayersDeckcheck_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/true_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Name="mniPlayersImportGalakta" Header="Import z Galakty" Click="mniPlayersImportGalakta_Click" Visibility="{Binding ElementName=cmbLanguage, Path=SelectedValue, Mode=OneWay, Converter={StaticResource LanguageToVisibilityConverter}}">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/open_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{lex:Loc MainWindow_Eksport}">
+                            <MenuItem Name="mniExportTablePointsToTxt" Header="{lex:Loc MainWindow_TabelaWynikowTXT}" Click="mniExportTablePointsToTxt_Click">
+
+                            </MenuItem>
+                            <MenuItem Name="mniExportTablePointsToTxtFormatted" Header="{lex:Loc MainWindow_TabelaWynikowTXTFormatted}" Click="mniExportTablePointsToTxtFormatted_Click">
+
+                            </MenuItem>
+                            <MenuItem Name="mniExportTablePointsToHTML" Header="{lex:Loc MainWindow_TabelaWynikowHTML}" Click="mniExportTablePointsToHTML_Click">
+
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Name="mniExportRoundsToTxtFormatted" Header="{lex:Loc MainWindow_RundyTXTFormatted}" Click="mniExportRoundsToTxtFormatted_Click">
+
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Name="mniExportFinalResultsToTxtFormatted" Header="{lex:Loc MainWindow_KlasyfikacjaKoncowaTXTFormatted}" Click="mniExportFinalResultsToTxtFormatted_Click">
+
+                            </MenuItem>
+
+                            <MenuItem Name="mniExportFinalResultsToHTML" Header="{lex:Loc MainWindow_KlasyfikacjaKoncowaHTML}" Click="mniExportFinalResultsToHTML_Click">
+
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Name="mniExportTournamentToGalakta" Header="Turniej -> GALAKTA" Click="mniExportTournamentToGalakta_Click" Visibility="{Binding ElementName=cmbLanguage, Path=SelectedValue, Mode=OneWay, Converter={StaticResource LanguageToVisibilityConverter}}">
+
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{lex:Loc MainWindow_Ustawienia}">
+                            <MenuItem Name="mniSettings" Header="{lex:Loc MainWindow_Opcje}" Click="mniSettings_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="Resources/settings_16.png" Height="16" Width="16"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{lex:Loc MainWindow_Pomoc}">
+                            <MenuItem Name="mniHelpAbout" Header="{lex:Loc MainWindow_OProgramie}" Click="mniHelpAbout_Click"/>
+                        </MenuItem>
+                    </Menu>
+                </Grid>
+            </Border>
+            <!-- EndRegion -->
+
+            <!-- Region Dane turnieju -->
+
+            <Border Margin="12,7"
+                    BorderBrush="Silver" 
+                    BorderThickness="1" 
+                    Grid.ColumnSpan="2" 
+                    Grid.Row="1"
+                    CornerRadius="8">
+                <StackPanel Name="stpTournament"
+                            CanHorizontallyScroll="False"
+                            CanVerticallyScroll="False"                    
+                            Orientation="Horizontal">
+
+                    <Label Content="{lex:Loc MainWindow_NazwaTurnieju}"                   
+                           Margin="10,0,10,0" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left" 
+                           FontSize="16" />
+
+                    <TextBox Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                             Width="300"
+                             VerticalAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             FontSize="16" 
+                             FontWeight="Bold"
+                             Foreground="DarkOrange"/>
+                    <!--
+                <Label Content="Ranga:"                   
+                       Margin="50,0,0,0" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left" 
+                       FontSize="16" />
+
+                <ctrl:TournamentImportanceComboBox SelectedValue="{Binding Path=Importance, Mode=TwoWay}"
+                                                   Width="120"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Left"
+                                                   FontSize="16" 
+                                                   FontWeight="Bold"
+                                                   Foreground="DarkGreen"/>
+-->
+                    <Label Content="{lex:Loc MainWindow_SredniRankGraczy}"                   
+                           Margin="50,0,10,0" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left" 
+                           FontSize="16" 
+                           Visibility="Collapsed"/>
+
+                    <Label Content="{Binding Path=AveragePlayersRank, Mode=OneWay}" 
+                           Name="lblAvgRank"
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left"
+                           FontSize="16" 
+                           FontWeight="Bold"
+                           Foreground="DarkOrange"
+                           Visibility="Collapsed"/>
+
+                    <Label Content="{lex:Loc MainWindow_Data}"                   
+                           Margin="50,0,10,0" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left" 
+                           FontSize="16" />
+
+                    <DatePicker VerticalAlignment="Center" 
+                                HorizontalAlignment="Left"
+                                FontSize="16" 
+                                FontWeight="Bold"
+                                Background="{x:Null}"
+                                Foreground="DarkOrange"
+                                SelectedDate="{Binding Path=Date, StringFormat='{}{0:yyyy-MM-dd}', Mode=TwoWay}"
+                                SelectedDateFormat="Short">
+
+                    </DatePicker>
+
+                </StackPanel>
+            </Border>
+
+            <!-- EndRegion -->
+
+            <!-- Region Rundy / Playoff'y -->
+
+            <TabControl Grid.Column="0" 
+                        Grid.ColumnSpan="2"
+                        Grid.Row="2" 
+                        Name="tbMain" 
+                        FontSize="16"
+                        Margin="12,0,12,0">
+                <TabItem Header="{lex:Loc MainWindow_TabelaWynikow}" Name="tabTablePoints" Visibility="Collapsed">
+                    <Grid Name="gridTablePoints">
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{lex:Loc MainWindow_Rundy}" Name="tabRounds">
+                    <Grid Name="gridRounds">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Region Tabela wyników -->
+
+                        <Border Grid.Row="0"
+                                Grid.RowSpan="2"
+                                BorderBrush="Silver"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                Margin="12,12"
+                                Name="brdTablePoints">
+                            <Grid x:Name="grdTable">
+                                <Label Content="{lex:Loc MainWindow_TabelaWynikow}" 
+                                       Height="Auto"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Top" 
+                                       Margin="9,8,0,0"
+                                       FontSize="16" />
+
+                                <xctrl:WatermarkTextBox Width="130"                         
+                                                        HorizontalAlignment="Right" 
+                                                        VerticalAlignment="Top" 
+                                                        Margin="0,9,370,0"
+                                                        FontSize="14"
+                                                        FontStyle="Italic"
+                                                        Background="{x:Null}"
+                                                        Foreground="{StaticResource TextBrush}"
+                                                        Watermark="{lex:Loc MainWindow_Wyszukaj}"                                                        
+                                                        BorderBrush="{StaticResource NormalBorderBrush}"
+                                                        TextChanged="TextBox_TextChanged"/>
+
+                                <DataGrid AutoGenerateColumns="False" 
+                                          CanUserAddRows="False"
+                                          CanUserDeleteRows="False"
+                                          CanUserReorderColumns="False"
+                                          CanUserSortColumns="True"
+                                          Grid.Row="2" 
+                                          Margin="12,43,12,12" 
+                                          Name="dgPointsTable"
+                                          FontSize="14"
+                                          IsReadOnly="True"
+                                          ItemsSource="{Binding Path=PointsTable, Mode=OneWay}"
+                                          RowHeaderWidth="0"      
+                                          Background="{x:Null}"
+                                          SelectionMode="Single"
+                                          SelectionChanged="dgPointsTable_SelectionChanged"
+                                          VerticalAlignment="Top"                                          
+                                          Style="{StaticResource DataGridStyle}">
+                                    <DataGrid.ContextMenu>
+                                        <ContextMenu VerticalAlignment="Center" Opened="ContextMenu_Opened">
+                                            <!--
+                                            <MenuItem Name="mniCorpoHB" Header="{lex:LocText Key=MainWindow_CMenu_CorpoHB, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniCorpoHB_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/corp-hb.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniCorpoJinteki" Header="{lex:LocText Key=MainWindow_CMenu_CorpoJinteki, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniCorpoJinteki_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/corp-jinteki.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniCorpoNBN" Header="{lex:LocText Key=MainWindow_CMenu_CorpoNBN, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniCorpoNBN_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/corp-nbn.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniCorpoWeyland" Header="{lex:LocText Key=MainWindow_CMenu_CorpoWeyland, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniCorpoWeyland_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/corp-weyland.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <Separator />
+                                            <MenuItem Name="mniRunnerAnarch" Header="{lex:LocText Key=MainWindow_CMenu_RunnerAnarch, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniRunnerAnarch_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/runner-anarch.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniRunnerCriminal" Header="{lex:LocText Key=MainWindow_CMenu_RunnerCriminal, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniRunnerCriminal_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/runner-criminal.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniRunnerShaper" Header="{lex:LocText Key=MainWindow_CMenu_RunnerShaper, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniRunnerShaper_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/runner-shaper.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            -->
+                                            <MenuItem Name="mniGalaktaSynchro" Header="Synchronizuj z rankingiem" Click="mniGalaktaSynchro_Click">
+                                                <!--="{Binding ElementName=cmbLanguage, Path=SelectedValue, Mode=OneWay, Converter={StaticResource LanguageToVisibilityConverter}}-->
+                                            </MenuItem>
+                                            <Separator/>
+                                            <MenuItem Name="mniGridPayment" Header="{lex:LocText Key=MainWindow_CMenu_Payment, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniGridPayment_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/green_44.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <Separator/>
+                                            <MenuItem Name="mniSuperBYE" Header="Super BYE" Click="mniGridSuperBYE_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/orange_44.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <Separator />
+                                            <MenuItem Name="mniGridDeletePlayer" Header="{lex:LocText Key=MainWindow_CMenu_DeletePlayer, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniGridDeletePlayer_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/deactivate_16.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniGridActivatePlayer" Header="{lex:LocText Key=MainWindow_CMenu_ActivatePlayer, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniGridActivatePlayer_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/true_16.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <Separator />
+                                            <MenuItem Name="mniGridDisqualificationPlayer" Foreground="Red" Header="{lex:LocText Key=MainWindow_CMenu_Disqualification, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniGridDisqualificationPlayer_Click">
+                                            </MenuItem>
+                                        </ContextMenu>
+                                    </DataGrid.ContextMenu>
+                                    <DataGrid.CellStyle>
+                                        <Style TargetType="DataGridCell" BasedOn="{StaticResource CellStyle}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="dgPointsTable_RowDoubleClick"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=Active}" Value="True">
+                                                    <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=Active}" Value="False">
+                                                    <Setter Property="Foreground" Value="Gold" />
+                                                </DataTrigger>
+                                                <!--
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource Self}}" />                                                    
+                                                </Trigger>
+                                                -->
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.CellStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="#"
+                                                            x:Name="colPlace"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Place, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+<!--
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_Nick, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colAlias"
+                                                            Width="*"
+                                                            Binding="{Binding Path=Alias, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+-->
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_Gracz, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                x:Name="colAlias"
+                                                                Width="*">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="39"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="39"/>
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        
+                                                        <TextBlock Grid.Column="0" Grid.ColumnSpan="4" Foreground="LightGreen" Text="{Binding Path=NameSurnameAlias, Mode=OneWay}" TextWrapping="Wrap" VerticalAlignment="Center" Margin="7,3,7,3"/>
+
+                                                        <Image Grid.Column="0" Grid.Row="1" Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}" VerticalAlignment="Center"/>
+                                                        <Image Grid.Column="2" Grid.Row="1" Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}" VerticalAlignment="Center"/>
+
+                                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=CorpoIdentity, Mode=OneWay}" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center" Margin="7,3,7,3"/>
+                                                        <TextBlock Grid.Column="3" Grid.Row="1" Text="{Binding Path=RunnerIdentity, Mode=OneWay}" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center" Margin="7,3,7,3"/>
+                                                        
+                                                    </Grid>                                                    
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+ <!--                                       
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_ImieINazwisko, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colName"
+                                                            Width="*"
+                                                            Binding="{Binding Path=NameSurname, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_FrakcjaCorpo, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                x:Name="colRaceCorpo"
+                                                                Width="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_FrakcjaRunner, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                x:Name="colRaceRunner"
+                                                                Width="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+-->
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_Rank, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colRankBeforeTournament"
+                                                            Width="Auto"                                                            
+                                                            Binding="{Binding Path=RankBeforeTournament, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_LiczbaGier, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colGamesCount"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=GamesCount, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_Punkty, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colPoints"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Points, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!--<DataGridTextColumn Header="CW"
+                                                            x:Name="colCorpoWins"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=CorpoWins, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="RW"
+                                                            x:Name="colRunnerWins"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=RunnerWins, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>-->
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_MB, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colMBucholz"
+                                                            Width="Auto"
+                                                            Visibility="Collapsed"
+                                                            Binding="{Binding Path=MBucholz, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colBucholz"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Bucholz, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="+/-"
+                                                            x:Name="colSmallPoints"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=SmallPointsPlusMinus, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_WRP, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colWinsDrawsLooses"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=GamesWinDrawLoose, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_DC, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                x:Name="colDeckcheck"
+                                                                Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=DeckCheck, Mode=OneWay, Converter={StaticResource BooleanToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_K, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colDiceCount"
+                                                            Visibility="Collapsed"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=DiceCount, Mode=OneWay}" >
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn Header="SB"
+                                                            x:Name="colSuperBYE"
+                                                            Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=SuperBYE, Mode=OneWay, Converter={StaticResource SuperBYEToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_Payment, Assembly=ANRTournament, Dict=Resources.StringTable}"                                                              
+                                                                x:Name="colPayment"
+                                                                Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=Payment, Mode=OneWay, Converter={StaticResource PaymentToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_G, Assembly=ANRTournament, Dict=Resources.StringTable}"                                                              
+                                                                x:Name="colGalakta"
+                                                                Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=IdGalakta, Mode=OneWay, Converter={StaticResource IdGalaktaToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                <Button Click="btnPlayerAdd_Click"
+                                        Height="30" 
+                                        FontSize="12"
+                                        HorizontalAlignment="Right"                
+                                        Margin="0,7,259,0" 
+                                        Name="btnPlayerAdd" 
+                                        VerticalAlignment="Top" 
+                                        Width="100">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/add_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <TextBlock Text="{lex:Loc MainWindow_Dodaj}" Margin="10,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Click="btnPlayerDeactivate_Click"
+                                        Height="30" 
+                                        FontSize="12"
+                                        HorizontalAlignment="Right" 
+                                        Margin="0,7,57,0" 
+                                        Name="btnPlayerDeactivate" 
+                                        VerticalAlignment="Top" 
+                                        Width="90">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/deactivate_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <TextBlock Text="{lex:Loc MainWindow_Usun}" Margin="10,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Click="btnPrintTable_Click"
+                                        Visibility="Visible"
+                                        Height="30" 
+                                        FontSize="12"
+                                        HorizontalAlignment="Right" 
+                                        Margin="0,7,11,0" 
+                                        Name="btnPrintTable"
+                                        VerticalAlignment="Top" 
+                                        ToolTip="{lex:Loc MainWindow_DrukujRunde}"
+                                        Width="40">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/print_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <!--<TextBlock Text="OK" Margin="10,0,0,0" />-->
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Click="btnPlayerEdit_Click"
+                                        Height="30" 
+                                        FontSize="12"
+                                        HorizontalAlignment="Right" 
+                                        Margin="0,7,153,0" 
+                                        Name="btnPlayerEdit"
+                                        VerticalAlignment="Top" 
+                                        Width="100">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/edit_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <TextBlock Text="{lex:Loc MainWindow_Edytuj}" Margin="10,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <!-- EndRegion -->
+
+                        <Border Grid.Column="1"
+                                BorderBrush="Silver"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                Margin="0,12,12,12"
+                                Name="brdRounds">
+                            <Grid>
+                                <Button x:Name="btnNewRound"                                    
+                                        Click="btnNewRound_Click"
+                                        FontSize="12"
+                                        Width="150"
+                                        Height="30"
+                                        Margin="12,7,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/add_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <TextBlock Text="{lex:Loc MainWindow_NowaRunda}" Margin="10,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="btnDeleteRound"                                                               
+                                        Click="btnDeleteRound_Click"
+                                        FontSize="12"
+                                        Width="150"
+                                        Height="30"
+                                        Margin="174,7,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/deactivate_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <TextBlock Text="{lex:Loc MainWindow_UsunOstRunde}" Margin="10,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="btnNewRoundHand"                                    
+                                        Click="btnNewRoundHand_Click"
+                                        FontSize="12"
+                                        Width="60"
+                                        Height="30"
+                                        Margin="0,7,12,0"
+                                        ToolTip="{lex:Loc MainWindow_TworzenieRundyRecznie}"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/hand_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <ctrl:TimerControl Margin="12,43,0,12" Height="33" VerticalAlignment="Top"/>
+
+                                <Border BorderBrush="Silver"
+                                        BorderThickness="1"
+                                        Margin="12,77,12,12">
+                                    <TabControl Name="tabRound"
+                                                ItemsSource="{Binding Rounds}">
+                                        <TabControl.ItemContainerStyle>
+                                            <Style TargetType="{x:Type TabItem}">
+                                                <Setter Property="Width" Value="50"/>
+                                                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                                <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+                                                <Style.Triggers>
+                                                    <Trigger Property="Selector.IsSelected" Value="True">
+                                                        <Setter Property="Foreground" >
+                                                            <Setter.Value>
+                                                                <SolidColorBrush Color="{DynamicResource BlackColor}"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TabControl.ItemContainerStyle>
+                                        <TabControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock FontSize="14" Text="{Binding Number}"/>
+                                            </DataTemplate>
+                                        </TabControl.ItemTemplate>
+                                        <TabControl.ContentTemplate>
+                                            <DataTemplate>
+                                                <ctrl:RoundControl DataContext="{Binding}"></ctrl:RoundControl>
+                                            </DataTemplate>
+                                        </TabControl.ContentTemplate>
+                                    </TabControl>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{lex:Loc MainWindow_Playoffs}" Name="tabPlayoffs">
+                    <Grid>
+                        <Button Content="{lex:Loc MainWindow_StartPlayoffsTop16}" 
+                                x:Name="btnTop16"
+                                DataContext="{Binding}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="14"
+                                Width="100"
+                                Height="21"
+                                Margin="12,12,0,0" Visibility="{Binding ElementName=btnTop16, Path=DataContext.PlayoffStartRound, Converter={StaticResource PlayoffDEModeToVisibilityConverter}}"
+                                Click="btnStartPlayoffsTop16_Click"/>
+
+                        <Button Content="{lex:Loc MainWindow_StartPlayoffsTop8}" 
+                                x:Name="btnTop8"
+                                DataContext="{Binding}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="14"
+                                Width="100"
+                                Height="21"
+                                Margin="130,12,0,0" Visibility="{Binding ElementName=btnTop16, Path=DataContext.PlayoffStartRound, Converter={StaticResource PlayoffDEModeToVisibilityConverter}}"
+                                Click="btnStartPlayoffsTop8_Click"/>
+
+                        <Button Content="{lex:Loc MainWindow_Clear}" 
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="14"
+                                Width="70"
+                                Height="21"
+                                Margin="250,12,0,0"
+                                Click="btnDeletePlayoffs_Click"/>
+
+                        <ctrl:TimerControl Margin="12,5,0,12" Height="33" VerticalAlignment="Top"/>
+
+                        <ctrl:PlayoffsControl16 x:Name="ctrlPlayoffs16" 
+                                                Margin="12,40,12,12"
+                                                Height="Auto"
+                                                Visibility="{Binding ElementName=btnTop16, Path=DataContext.PlayoffStartRound, Converter={StaticResource PlayoffTop16ModeToVisibilityConverter}}"/>
+
+                        <ctrl:PlayoffsControl8 x:Name="ctrlPlayoffs8" 
+                                               Margin="12,40,12,12"
+                                               Height="Auto"
+                                               Visibility="{Binding ElementName=btnTop8, Path=DataContext.PlayoffStartRound, Converter={StaticResource PlayoffTop8ModeToVisibilityConverter}}"/>
+
+                        <Button Click="btnPrintPlayoffs_Click"
+                                Visibility="Collapsed"
+                                Height="21" 
+                                FontSize="12"
+                                HorizontalAlignment="Right" 
+                                Margin="0,12,11,0" 
+                                Name="btnPrintPlayoffs"
+                                VerticalAlignment="Top" 
+                                ToolTip="{lex:Loc MainWindow_DrukujRunde}"
+                                Width="40">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Resources/print_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                <!--<TextBlock Text="OK" Margin="10,0,0,0" />-->
+                            </StackPanel>
+                        </Button>
+
+                        <ctrl:PlayoffRoundComboBox Visibility="Collapsed"
+                                                   x:Name="cmbPrintPlayoffs"
+                                                   HorizontalAlignment="Right"
+                                                   VerticalAlignment="Top"
+                                                   FontSize="14"
+                                                   Width="70"
+                                                   Height="21"
+                                                   Margin="0,12,60,0"
+                                                   Template="{StaticResource ComboBoxTemplate}"
+                                                   Foreground="{StaticResource TextBrush}"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{lex:Loc MainWindow_KlasyfikacjaKoncowa}" Name="tabFinalResults">
+                    <Grid>
+                        <Border Grid.Row="0"
+                                Grid.RowSpan="2"
+                                BorderBrush="Silver"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                Margin="12,12">
+                            <Grid x:Name="grdFinalResults">
+                                <Label Content="{lex:Loc MainWindow_KlasyfikacjaKoncowa}" 
+                                       Height="Auto"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Top" 
+                                       Margin="12,8,0,0"
+                                       FontSize="16"/>
+
+                                <Button HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        FontSize="14"
+                                        Width="150"
+                                        Height="30"
+                                        Margin="200,6,0,0"
+                                        Click="btnRefreshFinalResults_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/refresh_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <TextBlock Text="{lex:Loc MainWindow_Przelicz}" Margin="10,0,0,0" />
+                                    </StackPanel>
+                                </Button>
+
+                                <xctrl:WatermarkTextBox Width="200"                         
+                                                        HorizontalAlignment="Left" 
+                                                        VerticalAlignment="Top" 
+                                                        Margin="370,9,0,0"
+                                                        FontSize="14"
+                                                        FontStyle="Italic"
+                                                        Background="{x:Null}"
+                                                        Foreground="{StaticResource TextBrush}"
+                                                        Watermark="{lex:Loc MainWindow_Wyszukaj}"                                                        
+                                                        BorderBrush="{StaticResource NormalBorderBrush}"
+                                                        TextChanged="FinalResultsFilter_TextChanged"/>
+                                <Button Click="btnPrintFinalResults_Click"
+                                        Visibility="Visible"
+                                        Height="21" 
+                                        FontSize="12"
+                                        HorizontalAlignment="Right" 
+                                        Margin="0,12,11,0" 
+                                        Name="btnPrintFinalResults"
+                                        VerticalAlignment="Top" 
+                                        ToolTip="{lex:Loc MainWindow_DrukujKlasyfikacjeKoncowa}"
+                                        Width="40">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/print_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                                        <!--<TextBlock Text="OK" Margin="10,0,0,0" />-->
+                                    </StackPanel>
+                                </Button>
+                                <DataGrid AutoGenerateColumns="False" 
+                                          CanUserAddRows="False"
+                                          CanUserDeleteRows="False"
+                                          CanUserReorderColumns="False"
+                                          CanUserSortColumns="True"
+                                          Grid.Row="2" 
+                                          Margin="12,43,12,12" 
+                                          Name="dgFinalResults"
+                                          FontSize="14"
+                                          IsReadOnly="True"
+                                          ItemsSource="{Binding Path=FinalResults, Mode=OneWay}"
+                                          RowHeaderWidth="0"      
+                                          Background="{x:Null}"
+                                          SelectionMode="Single"
+                                          VerticalAlignment="Top"                                          
+                                          Style="{StaticResource DataGridStyle}">
+
+                                    <DataGrid.CellStyle>
+                                        <Style TargetType="DataGridCell" BasedOn="{StaticResource CellStyle}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=Player.Active}" Value="True">
+                                                    <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=Player.Active}" Value="False">
+                                                    <Setter Property="Foreground" Value="Red" />
+                                                </DataTrigger>
+                                                <!--
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource Self}}" />                                                    
+                                                </Trigger>
+                                                -->
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.CellStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="#"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=FinalPlace, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,0,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+<!--                                        
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_Nick, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="*"
+                                                            Binding="{Binding Path=Player.Alias, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,0,0"/>
+                                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+ -->
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_Gracz, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                Width="*">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="39"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="39"/>
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <TextBlock Grid.Column="0" Grid.ColumnSpan="4" Foreground="LightGreen" Text="{Binding Path=Player.NameSurnameAlias, Mode=OneWay}" TextWrapping="Wrap" VerticalAlignment="Center" Margin="7,3,7,3"/>
+
+                                                        <Image Grid.Column="0" Grid.Row="1" Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player.RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}" VerticalAlignment="Center"/>
+                                                        <Image Grid.Column="2" Grid.Row="1" Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player.RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}" VerticalAlignment="Center"/>
+
+                                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=Player.CorpoIdentity, Mode=OneWay}" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center" Margin="7,3,7,3"/>
+                                                        <TextBlock Grid.Column="3" Grid.Row="1" Text="{Binding Path=Player.RunnerIdentity, Mode=OneWay}" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center" Margin="7,3,7,3"/>
+
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <!--                                       <DataGridTextColumn Header="{lex:LocText Key=MainWindow_ImieINazwisko, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="*"
+                                                            Binding="{Binding Path=Player.NameSurname, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_FrakcjaCorpo, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                Width="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player.RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_FrakcjaRunner, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                Width="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=Player.RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+-->
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_Rank, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Player.RankBeforeTournament, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_LiczbaGier, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Player.GamesCount, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="0,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_Punkty, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Player.Points, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="0,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="+/-"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Player.SmallPointsPlusMinus, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_MB, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="Auto"
+                                                            Visibility="Collapsed"
+                                                            Binding="{Binding Path=Player.MBucholz, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Player.Bucholz, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Right"/>
+                                                    <Setter Property="Margin" Value="7,0,7,0"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_WRP, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            Width="Auto"
+                                                            Binding="{Binding Path=Player.GamesWinDrawLoose, Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_DC, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=Player.DeckCheck, Mode=OneWay, Converter={StaticResource BooleanToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+
+            <!-- EndRegion -->
+
+            <!-- Region Footer -->
+
+            <Border Grid.Row="3" 
+                    Grid.ColumnSpan="2"
+                    Margin="12,0,12,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Programmed by: Tomasz 'morphine' Bator © 2013"                                           
+                           Foreground="DarkGray"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           FontSize="10" />
+                </Grid>
+            </Border>
+
+            <!-- EndRegion -->
+
+        </Grid>
+    </xctrl:BusyIndicator>
+</Window>

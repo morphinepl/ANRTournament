@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="ANRTournament.Controls.RaceRunnerRadioButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="403" 
+             d:DesignWidth="150">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <RadioButton x:Name="rdbRunnerAnarch"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Checked="rdbRunner_CheckedChange"
+                     Unchecked="rdbRunner_CheckedChange"/>
+        <Image x:Name="imgRunnerAnarch"
+               Grid.Column="1"
+               Grid.Row="0"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgRunnerAnarch_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbRunnerCriminal"
+                     Grid.Row="1"
+                     Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Checked="rdbRunner_CheckedChange"
+                     Unchecked="rdbRunner_CheckedChange"/>
+        <Image x:Name="imgRunnerCriminal"
+               Grid.Column="1"
+               Grid.Row="1"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgRunnerCriminal_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbRunnerShaper"
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Checked="rdbRunner_CheckedChange"
+                     Unchecked="rdbRunner_CheckedChange"/>
+        <Image x:Name="imgRunnerShaper"
+               Grid.Column="1"
+               Grid.Row="2"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgRunnerShaper_MouseLeftButtonDown"/>
+    </Grid>
+</UserControl>
+

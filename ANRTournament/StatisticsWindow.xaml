@@ -1,0 +1,105 @@
+﻿<Window x:Class="ANRTournament.StatisticsWindow"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        xmlns:pie="clr-namespace:PieControls;assembly=PieControls"
+        lex:LocalizeDictionary.DesignCulture="pl"
+        lex:ResxLocalizationProvider.DefaultAssembly="ANRTournament"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources.StringTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" 
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" 
+        MinHeight="300"
+        ShowInTaskbar="False"
+        Background="{StaticResource WindowBackgroundBrush}" 
+        Icon="/ANRTournament;component/Resources/ANRTournament.png" 
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        d:DesignHeight="380" 
+        d:DesignWidth="1000" 
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight">
+    <Grid Background="{x:Null}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" 
+                Grid.ColumnSpan="2"
+                BorderBrush="Silver"
+                BorderThickness="1"
+                Margin="4,4,4,0"
+                CornerRadius="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{lex:Loc StatisticsWindow_Title}"                    
+                       Grid.ColumnSpan="2"
+                       Foreground="White"
+                       HorizontalAlignment="Center"  
+                       VerticalAlignment="Center"
+                       FontSize="12" Padding="0"/>
+                
+                <Button x:Name="btnExit"
+                            Click="btnOk_Click"
+                            BorderThickness="0"
+                            Content="X"
+                            Height="15"
+                            Width="40"
+                            HorizontalAlignment="Right"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Background="Red"
+                            Grid.Column="5" 
+                            FontSize="7"
+                            Margin="3"
+                            ToolTip="{lex:Loc MainWindow_Zamknij}"/>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="grdStat" Grid.Row="1" Margin="4,10,4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="280" />              
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox x:Name="grpStatRace" Grid.Row="0" Header="{lex:Loc StatisticsWindow_RozkladStolic}" FontSize="14" Background="{x:Null}" Margin="0,0,5,5">
+                <pie:PieChart x:Name="ctrlRaseChart" Width="400" Height="200" PieWidth="180" PieHeight="180" LegendFontColor="White" LegendFontSize="14"/>
+            </GroupBox>
+            <GroupBox x:Name="grpStatRaceTop" Grid.Row="0" Grid.Column="1" Header="{lex:Loc StatisticsWindow_RozkladStolicTop}" FontSize="14" Background="{x:Null}" Margin="0,0,5,5">
+                <pie:PieChart x:Name="ctrlRaseTopChart" Width="400" Height="200" PieWidth="180" PieHeight="180" LegendFontColor="White" LegendFontSize="14"/>
+            </GroupBox>
+        </Grid>
+
+        <Button Grid.Row="2" 
+                Click="btnSave_Click"
+                Height="23" 
+                FontSize="12"
+                HorizontalAlignment="Left"                
+                Margin="12,12,12,12" 
+                Name="btnSave" 
+                VerticalAlignment="Top" 
+                Width="150">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Resources/save_16.png" Height="16" Width="16" Stretch="Uniform"/>
+                <TextBlock Text="{lex:Loc MainWindow_ZapiszJako}" Margin="10,0,0,0" />
+            </StackPanel>
+        </Button>
+
+        <Button Content="{lex:Loc MainWindow_Zamknij}" Grid.Row="2"
+                Height="23" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="12,12,12,12" 
+                Width="150"
+                Click="btnOk_Click" Grid.Column="1" />        
+    </Grid>
+</Window>

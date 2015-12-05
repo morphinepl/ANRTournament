@@ -1,0 +1,181 @@
+﻿<Window x:Class="ANRTournament.DeckCheckWindow"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="pl"
+        lex:ResxLocalizationProvider.DefaultAssembly="ANRTournament"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources.StringTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctrl="clr-namespace:ANRTournament.Controls"
+        xmlns:conv="clr-namespace:ANRTournament.Converters"
+        xmlns:xctrl="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="" 
+        WindowStyle="None" 
+        mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource WindowBackgroundBrush}" 
+        Width="800" Height="600"
+        ShowInTaskbar="False" 
+        Icon="/ANRTournament;component/Resources/ANRTournament.png">
+    <Grid>
+        <Grid.Resources>
+            <conv:RaceCorpoToImageConverter x:Key="RaceCorpoToImageConverter"/>
+            <conv:RaceRunnerToImageConverter x:Key="RaceRunnerToImageConverter"/>
+            <conv:BooleanToImageConverter x:Key="BooleanToImageConverter"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="17" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- Region Title -->
+        <Border Grid.Row="0"                 
+                BorderBrush="Silver"
+                BorderThickness="1"
+                Margin="4,4,4,0"
+                CornerRadius="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{lex:Loc DeckCheckWindow_Deckcheck}"                    
+                       Grid.ColumnSpan="2"
+                       Foreground="White"
+                       HorizontalAlignment="Center"  
+                       VerticalAlignment="Center"
+                       FontSize="12" Padding="0"/>
+            </Grid>
+        </Border>
+
+        <!-- EndRegion -->
+
+        <Label Content="{lex:Loc DeckCheckWindow_LiczbaGraczyDoLosowania}" 
+               Grid.Row="2"    
+               Margin="20,5,0,5"
+               HorizontalAlignment="Left"               
+               VerticalAlignment="Center"/>
+
+        <xctrl:IntegerUpDown Name="numPlayersNumber"
+                             Grid.Row="2" 
+                             Margin="178,3,0,3"
+                             HorizontalAlignment="Left"                 
+                             VerticalAlignment="Center"
+                             Width="50"
+                             Minimum="1"
+                             Background="{x:Null}"
+                             Foreground="{StaticResource TextBrush}"/>
+
+        <Button Content="{lex:Loc DeckCheckWindow_Losuj}" 
+                Click="btnGetPlayers_Click"
+                Grid.Row="2" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" 
+                Margin="234,0,0,0" 
+                Name="btnGetPlayers"
+                Width="90" 
+                Height="23"/>
+
+        <Button Content="OK"
+                Click="btnExit_Click"
+                Grid.Row="6" 
+                Grid.Column="1"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"                 
+                Name="btnExit"
+                Width="100" 
+                Height="23"/>
+
+        <DataGrid AutoGenerateColumns="False" 
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False"
+                  CanUserSortColumns="False"
+                  Grid.Row="4" 
+                  Margin="12,0,12,12" 
+                  Name="dgPointsTable"
+                  FontSize="14"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding Mode=OneWay}"
+                  RowHeaderWidth="0"      
+                  Background="{x:Null}"
+                  SelectionMode="Single"
+                  VerticalAlignment="Top"                                          
+                  Style="{StaticResource DataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{lex:LocText Key=DeckCheckWindow_Nazwa, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                    x:Name="colAlias"
+                                    Width="*"
+                                    Binding="{Binding Path=Alias, Mode=OneWay}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="7,0,0,0"/>
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="{lex:LocText Key=DeckCheckWindow_ImieINazwisko, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                    x:Name="colName"
+                                    Width="*"
+                                    Binding="{Binding Path=NameSurname, Mode=OneWay}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="7,0,7,0"/>
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_FrakcjaCorpo, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                        x:Name="colRaceCorpo"
+                                        Width="65">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=RaceCorpo, Mode=OneWay, Converter={StaticResource RaceCorpoToImageConverter}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_FrakcjaRunner, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                        x:Name="colRaceRunner"
+                                        Width="65">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Stretch="Uniform" Height="32" Width="32" Source="{Binding Path=RaceRunner, Mode=OneWay, Converter={StaticResource RaceRunnerToImageConverter}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{lex:LocText Key=DeckCheckWindow_DC, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                        x:Name="colDeckcheck"
+                                        Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="btnCheck_Click"
+                                    Height="30" 
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" 
+                                    Name="btnCheck" 
+                                    VerticalAlignment="Top" 
+                                    Width="100">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=DeckCheck, Mode=OneWay, Converter={StaticResource BooleanToImageConverter}}"/>
+                                </StackPanel>
+                            </Button>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
