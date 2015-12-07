@@ -54,6 +54,22 @@ namespace ANRTournament
         /// Shaper
         /// </summary>
         Shaper,
+
+        /// <summary>
+        /// Apex
+        /// </summary>
+        Apex,
+
+        /// <summary>
+        /// Adam
+        /// </summary>
+        Adam,
+
+        /// <summary>
+        /// Sunny
+        /// </summary>
+        Sunny,
+
     }
 
     /// <summary>
@@ -175,7 +191,16 @@ namespace ANRTournament
                     break;
                 case RaceRunner.Shaper:
                     sRet = "Shaper";
-                    break;                
+                    break;
+                case RaceRunner.Apex:
+                    sRet = "Apex";
+                    break;
+                case RaceRunner.Adam:
+                    sRet = "Adam";
+                    break;
+                case RaceRunner.Sunny:
+                    sRet = "Sunny";
+                    break;
                 default:
                     break;
             }

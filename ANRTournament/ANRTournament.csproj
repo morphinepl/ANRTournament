@@ -389,6 +389,9 @@
     <Content Include="lib\Microsoft.Expression.Drawing.dll" />
     <Content Include="lib\PieControls.dll" />
     <Content Include="lib\WPFToolkit.Extended.dll" />
+    <Resource Include="Resources\runner-adam.png" />
+    <Resource Include="Resources\runner-apex.png" />
+    <Resource Include="Resources\runner-sunny.png" />
     <Resource Include="Resources\orange_44.png" />
     <Resource Include="Resources\ANRTournament.png" />
     <Resource Include="Resources\corp-hb.png" />

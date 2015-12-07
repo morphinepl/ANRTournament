@@ -392,6 +392,21 @@
                                                     <Image Source="Resources/runner-shaper.png" Height="16" Width="16"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
+                                            <MenuItem Name="mniRunnerApex" Header="{lex:LocText Key=MainWindow_CMenu_RunnerShaper, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniRunnerApex_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/runner-apex.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniRunnerAdam" Header="{lex:LocText Key=MainWindow_CMenu_RunnerShaper, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniRunnerAdam_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/runner-adam.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem Name="mniRunnerSunny" Header="{lex:LocText Key=MainWindow_CMenu_RunnerShaper, Assembly=ANRTournament, Dict=Resources.StringTable}" Click="mniRunnerSunny_Click">
+                                                <MenuItem.Icon>
+                                                    <Image Source="Resources/runner-sunny.png" Height="16" Width="16"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
                                             -->
                                             <MenuItem Name="mniGalaktaSynchro" Header="Synchronizuj z rankingiem" Click="mniGalaktaSynchro_Click">
                                                 <!--="{Binding ElementName=cmbLanguage, Path=SelectedValue, Mode=OneWay, Converter={StaticResource LanguageToVisibilityConverter}}-->

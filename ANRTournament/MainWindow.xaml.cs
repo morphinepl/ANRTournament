@@ -1255,6 +1255,30 @@ namespace ANRTournament
 
             playerToEdit.RaceRunner = RaceRunner.Shaper;
         }
+
+        private void mniRunnerApex_Click(object sender, RoutedEventArgs e)
+        {
+            Player playerToEdit = this.dgPointsTable.SelectedItem as Player;
+            if (playerToEdit == null) return;
+
+            playerToEdit.RaceRunner = RaceRunner.Apex;
+        }
+
+        private void mniRunnerAdam_Click(object sender, RoutedEventArgs e)
+        {
+            Player playerToEdit = this.dgPointsTable.SelectedItem as Player;
+            if (playerToEdit == null) return;
+
+            playerToEdit.RaceRunner = RaceRunner.Adam;
+        }
+
+        private void mniRunnerSunny_Click(object sender, RoutedEventArgs e)
+        {
+            Player playerToEdit = this.dgPointsTable.SelectedItem as Player;
+            if (playerToEdit == null) return;
+
+            playerToEdit.RaceRunner = RaceRunner.Sunny;
+        }
         */
 
         private void mniGalaktaSynchro_Click(object sender, RoutedEventArgs e)
