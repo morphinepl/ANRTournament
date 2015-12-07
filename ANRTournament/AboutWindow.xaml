@@ -57,7 +57,7 @@
                Margin="0,60,5,0" 
                VerticalAlignment="Top" />
 
-        <Button Content="http://netrunnerforum.decktech.eu/index.php?/topic/651-anrtournament-czyli-program-turniejowy/" 
+        <Button Content="https://github.com/morphinepl/ANRTournament/issues"
                 Grid.Column="1" 
                 Grid.Row="1" 
                 HorizontalAlignment="Left" 
@@ -73,7 +73,7 @@
                Margin="0,20,5,0" 
                VerticalAlignment="Top" />
 
-        <Label Content="Tomasz 'morphine' Bator © 2013"
+        <Label Content="Tomasz 'morphine' Bator © 2013-2016"
                Grid.Column="1"
                Grid.Row="1" 
                HorizontalAlignment="Left" 

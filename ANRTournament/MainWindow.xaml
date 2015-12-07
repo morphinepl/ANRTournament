@@ -1226,7 +1226,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Programmed by: Tomasz 'morphine' Bator © 2013"                                           
+                    <Label Content="Programmed by: Tomasz 'morphine' Bator © 2013-2016"
                            Foreground="DarkGray"
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"
