@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ANRTournament")]
-[assembly: AssemblyCopyright("Copyright © Tomasz Bator 2013")]
+[assembly: AssemblyCopyright("Copyright © Tomasz Bator 2013-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.2.8")]
-[assembly: AssemblyFileVersion("0.2.8")]
+[assembly: AssemblyVersion("0.2.9")]
+[assembly: AssemblyFileVersion("0.2.9")]

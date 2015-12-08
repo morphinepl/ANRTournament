@@ -36,14 +36,17 @@ namespace ANRTournament
 
             SortedList<string, int> sortedStatRace = new SortedList<string, int>()
             {                
-                { "iCH", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.HaasBioroid).Count() },
-                { "iCJ", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.Jinteki).Count()  },
-                { "iCN", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.NBN).Count() },
-                { "iCW", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.WeylandConsortium).Count() },
+                { "iCHB", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.HaasBioroid).Count() },
+                { "iCJT", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.Jinteki).Count()  },
+                { "iCNB", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.NBN).Count() },
+                { "iCWL", tournament.PointsTable.Where(p => p.RaceCorpo == RaceCorpo.WeylandConsortium).Count() },
                 
-                { "iRA", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Anarch).Count() },
-                { "iRC", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Criminal).Count() },                
-                { "iRS", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Shaper).Count() },                
+                { "iRAN", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Anarch).Count() },
+                { "iRCR", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Criminal).Count() },
+                { "iRSH", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Shaper).Count() },
+                { "iRAP", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Apex).Count() },
+                { "iRAD", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Adam).Count() },
+                { "iRSU", tournament.PointsTable.Where(p => p.RaceRunner == RaceRunner.Sunny).Count() },
             };
 
             ObservableCollection<PieSegment> raceStatCollection = new ObservableCollection<PieSegment>();
@@ -55,39 +58,54 @@ namespace ANRTournament
 
                 switch (item.Key)
                 {
-                    case "iCH":
+                    case "iCHB":
                         name = StringTable.MainWindow_CMenu_CorpoHB;
                         color = Colors.Violet;
                         break;
 
-                    case "iCJ":
+                    case "iCJT":
                         name = StringTable.MainWindow_CMenu_CorpoJinteki;
                         color = Colors.DarkRed;
                         break;
 
-                    case "iCN":
+                    case "iCNB":
                         name = StringTable.MainWindow_CMenu_CorpoNBN;
                         color = Colors.Gold;
                         break;
 
-                    case "iCW":
+                    case "iCWL":
                         name = StringTable.MainWindow_CMenu_CorpoWeyland;
                         color = Colors.DarkGreen;
                         break;
 
-                    case "iRA":
+                    case "iRAN":
                         name = StringTable.MainWindow_CMenu_RunnerAnarch;
                         color = Colors.OrangeRed;
                         break;
 
-                    case "iRC":
+                    case "iRCR":
                         name = StringTable.MainWindow_CMenu_RunnerCriminal;
                         color = Colors.Blue;
                         break;
 
-                    case "iRS":
+                    case "iRSH":
                         name = StringTable.MainWindow_CMenu_RunnerShaper;
                         color = Colors.LightGreen;
+                        break;
+
+                    case "iRAP":
+                        name = StringTable.MainWindow_CMenu_RunnerApex;
+                        color = Colors.OrangeRed;
+                        break;
+
+                    case "iRAD":
+                        name = StringTable.MainWindow_CMenu_RunnerAdam;
+                        color = Colors.Olive;
+                        break;
+
+                    case "iRSU":
+                        name = StringTable.MainWindow_CMenu_RunnerSunny;
+                        color = Colors.LightGray;
                         break;
 
                     default:
@@ -108,14 +126,17 @@ namespace ANRTournament
                 IEnumerable<Player> top16 = tournament.PointsTable.OrderBy(c => c.Place).Take(16);
                 SortedList<string, int> sortedStatRaceTop = new SortedList<string, int>()
                 {
-                    { "iCH", top16.Where(p => p.RaceCorpo == RaceCorpo.HaasBioroid).Count() },
-                    { "iCJ", top16.Where(p => p.RaceCorpo == RaceCorpo.Jinteki).Count()  },
-                    { "iCN", top16.Where(p => p.RaceCorpo == RaceCorpo.NBN).Count() },
-                    { "iCW", top16.Where(p => p.RaceCorpo == RaceCorpo.WeylandConsortium).Count() },
-                
-                    { "iRA", top16.Where(p => p.RaceRunner == RaceRunner.Anarch).Count() },
-                    { "iRC", top16.Where(p => p.RaceRunner == RaceRunner.Criminal).Count() },                
-                    { "iRS", top16.Where(p => p.RaceRunner == RaceRunner.Shaper).Count() },                    
+                    { "iCHB", top16.Where(p => p.RaceCorpo == RaceCorpo.HaasBioroid).Count() },
+                    { "iCJT", top16.Where(p => p.RaceCorpo == RaceCorpo.Jinteki).Count()  },
+                    { "iCNB", top16.Where(p => p.RaceCorpo == RaceCorpo.NBN).Count() },
+                    { "iCWL", top16.Where(p => p.RaceCorpo == RaceCorpo.WeylandConsortium).Count() },
+
+                    { "iRAN", top16.Where(p => p.RaceRunner == RaceRunner.Anarch).Count() },
+                    { "iRCR", top16.Where(p => p.RaceRunner == RaceRunner.Criminal).Count() },
+                    { "iRSH", top16.Where(p => p.RaceRunner == RaceRunner.Shaper).Count() },
+                    { "iRAP", top16.Where(p => p.RaceRunner == RaceRunner.Apex).Count() },
+                    { "iRAD", top16.Where(p => p.RaceRunner == RaceRunner.Adam).Count() },
+                    { "iRSU", top16.Where(p => p.RaceRunner == RaceRunner.Sunny).Count() },
                 };
 
                 ObservableCollection<PieSegment> raceStatCollectionTop = new ObservableCollection<PieSegment>();
@@ -127,39 +148,54 @@ namespace ANRTournament
 
                     switch (item.Key)
                     {
-                        case "iCH":
+                        case "iCHB":
                             name = StringTable.MainWindow_CMenu_CorpoHB;
                             color = Colors.Violet;
                             break;
 
-                        case "iCJ":
+                        case "iCJT":
                             name = StringTable.MainWindow_CMenu_CorpoJinteki;
                             color = Colors.DarkRed;
                             break;
 
-                        case "iCN":
+                        case "iCNB":
                             name = StringTable.MainWindow_CMenu_CorpoNBN;
                             color = Colors.Gold;
                             break;
 
-                        case "iCW":
+                        case "iCWL":
                             name = StringTable.MainWindow_CMenu_CorpoWeyland;
                             color = Colors.DarkGreen;
                             break;
 
-                        case "iRA":
+                        case "iRAN":
                             name = StringTable.MainWindow_CMenu_RunnerAnarch;
                             color = Colors.OrangeRed;
                             break;
 
-                        case "iRC":
+                        case "iRCR":
                             name = StringTable.MainWindow_CMenu_RunnerCriminal;
                             color = Colors.Blue;
                             break;
 
-                        case "iRS":
+                        case "iRSH":
                             name = StringTable.MainWindow_CMenu_RunnerShaper;
                             color = Colors.LightGreen;
+                            break;
+
+                        case "iRAP":
+                            name = StringTable.MainWindow_CMenu_RunnerApex;
+                            color = Colors.OrangeRed;
+                            break;
+
+                        case "iRAD":
+                            name = StringTable.MainWindow_CMenu_RunnerAdam;
+                            color = Colors.Olive;
+                            break;
+
+                        case "iRSU":
+                            name = StringTable.MainWindow_CMenu_RunnerSunny;
+                            color = Colors.LightGray;
                             break;
 
                         default:

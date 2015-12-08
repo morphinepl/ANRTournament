@@ -32,6 +32,18 @@
                         imagePath = "runner-shaper.png";
                         break;
 
+                    case RaceRunner.Apex:
+                        imagePath = "runner-apex.png";
+                        break;
+
+                    case RaceRunner.Adam:
+                        imagePath = "runner-adam.png";
+                        break;
+
+                    case RaceRunner.Sunny:
+                        imagePath = "runner-sunny.png";
+                        break;
+
                     default:
                         break;
                 }

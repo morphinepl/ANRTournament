@@ -681,6 +681,15 @@ Path: {0}
   <data name="MainWindow_CMenu_RunnerShaper" xml:space="preserve">
     <value>Shaper</value>
   </data>
+  <data name="MainWindow_CMenu_RunnerApex" xml:space="preserve">
+    <value>Apex</value>
+  </data>
+  <data name="MainWindow_CMenu_RunnerAdam" xml:space="preserve">
+    <value>Adam</value>
+  </data>
+  <data name="MainWindow_CMenu_RunnerSunny" xml:space="preserve">
+    <value>Sunny</value>
+  </data>
   <data name="LiguePointsWindow_Wygrana" xml:space="preserve">
     <value>Win</value>
   </data>

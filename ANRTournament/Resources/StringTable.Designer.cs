@@ -581,7 +581,40 @@ namespace ANRTournament.Resources {
                 return ResourceManager.GetString("MainWindow_CMenu_RunnerShaper", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Apex.
+        /// </summary>
+        internal static string MainWindow_CMenu_RunnerApex
+        {
+            get
+            {
+                return ResourceManager.GetString("MainWindow_CMenu_RunnerApex", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Adam.
+        /// </summary>
+        internal static string MainWindow_CMenu_RunnerAdam
+        {
+            get
+            {
+                return ResourceManager.GetString("MainWindow_CMenu_RunnerAdam", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sunny.
+        /// </summary>
+        internal static string MainWindow_CMenu_RunnerSunny
+        {
+            get
+            {
+                return ResourceManager.GetString("MainWindow_CMenu_RunnerSunny", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Data:.
         /// </summary>

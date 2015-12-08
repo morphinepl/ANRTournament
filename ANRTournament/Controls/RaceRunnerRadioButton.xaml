@@ -11,6 +11,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -61,6 +64,51 @@
                Width="32"
                Margin="3"
                MouseLeftButtonDown="imgRunnerShaper_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbRunnerApex"
+                     Grid.Row="3"
+                     Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Checked="rdbRunner_CheckedChange"
+                     Unchecked="rdbRunner_CheckedChange"/>
+        <Image x:Name="imgRunnerApex"
+               Grid.Column="1"
+               Grid.Row="3"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgRunnerApex_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbRunnerAdam"
+                     Grid.Row="4"
+                     Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Checked="rdbRunner_CheckedChange"
+                     Unchecked="rdbRunner_CheckedChange"/>
+        <Image x:Name="imgRunnerAdam"
+               Grid.Column="1"
+               Grid.Row="4"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgRunnerAdam_MouseLeftButtonDown"/>
+
+        <RadioButton x:Name="rdbRunnerSunny"
+                     Grid.Row="5"
+                     Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Checked="rdbRunner_CheckedChange"
+                     Unchecked="rdbRunner_CheckedChange"/>
+        <Image x:Name="imgRunnerSunny"
+               Grid.Column="1"
+               Grid.Row="5"
+               Stretch="Uniform"
+               Height="32"
+               Width="32"
+               Margin="3"
+               MouseLeftButtonDown="imgRunnerSunny_MouseLeftButtonDown"/>
     </Grid>
 </UserControl>
 
