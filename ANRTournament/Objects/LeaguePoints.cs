@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ANRTournament.Objects
 {
-    public class LiguePoints
+    public class LeaguePoints
     {
         public Player Player { get; set; }
 

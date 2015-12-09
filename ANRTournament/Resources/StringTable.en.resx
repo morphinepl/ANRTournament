@@ -549,70 +549,70 @@ Path: {0}
   <data name="SettingsWindow_SystemKostki_OnlyRandom" xml:space="preserve">
     <value>Only random</value>
   </data>
-  <data name="MainWindow_LiguePoints" xml:space="preserve">
+  <data name="MainWindow_LeaguePoints" xml:space="preserve">
     <value>League points</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce1" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce1" xml:space="preserve">
     <value>1st</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce2" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce2" xml:space="preserve">
     <value>2nd</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce3" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce3" xml:space="preserve">
     <value>3rd</value>
   </data>
-  <data name="LiguePointsWindow_NajlepszyRasa" xml:space="preserve">
+  <data name="LeaguePointsWindow_NajlepszyRasa" xml:space="preserve">
     <value>Best in faction</value>
   </data>
-  <data name="LiguePointsWindow_Opcje" xml:space="preserve">
+  <data name="LeaguePointsWindow_Opcje" xml:space="preserve">
     <value>Pointing options</value>
   </data>
-  <data name="LiguePointsWindow_Przegrana" xml:space="preserve">
+  <data name="LeaguePointsWindow_Przegrana" xml:space="preserve">
     <value>Loose</value>
   </data>
-  <data name="LiguePointsWindow_Remis" xml:space="preserve">
+  <data name="LeaguePointsWindow_Remis" xml:space="preserve">
     <value>Draw</value>
   </data>
-  <data name="LiguePointsWindow_Title" xml:space="preserve">
+  <data name="LeaguePointsWindow_Title" xml:space="preserve">
     <value>League points</value>
   </data>
-  <data name="LiguePointsWindow_Uczestnictwo" xml:space="preserve">
+  <data name="LeaguePointsWindow_Uczestnictwo" xml:space="preserve">
     <value>Participation</value>
   </data>
-  <data name="LiguePointsWindow_Wygrana_1_0" xml:space="preserve">
+  <data name="LeaguePointsWindow_Wygrana_1_0" xml:space="preserve">
     <value>Win 1:0</value>
   </data>
-  <data name="LiguePointsWindow_Wygrana_2_0" xml:space="preserve">
+  <data name="LeaguePointsWindow_Wygrana_2_0" xml:space="preserve">
     <value>Win 2:0</value>
   </data>
-  <data name="LiguePointsWindow_Wygrana_2_1" xml:space="preserve">
+  <data name="LeaguePointsWindow_Wygrana_2_1" xml:space="preserve">
     <value>Win 2:1</value>
   </data>
-  <data name="LiguePointsWindow_Wygrana_BYE" xml:space="preserve">
+  <data name="LeaguePointsWindow_Wygrana_BYE" xml:space="preserve">
     <value>BYE</value>
   </data>
-  <data name="LiguePointsWindow_MalePunkty" xml:space="preserve">
+  <data name="LeaguePointsWindow_MalePunkty" xml:space="preserve">
     <value>Small points sum</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce4" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce4" xml:space="preserve">
     <value>4th</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce5" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce5" xml:space="preserve">
     <value>5th</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce6" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce6" xml:space="preserve">
     <value>6th</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce7" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce7" xml:space="preserve">
     <value>7th</value>
   </data>
-  <data name="LiguePointsWindow_Miejsce8" xml:space="preserve">
+  <data name="LeaguePointsWindow_Miejsce8" xml:space="preserve">
     <value>8th</value>
   </data>
-  <data name="LiguePointsWindow_Zapisz" xml:space="preserve">
+  <data name="LeaguePointsWindow_Zapisz" xml:space="preserve">
     <value>Save to file</value>
   </data>
-  <data name="LiguePointsWindow_Suma" xml:space="preserve">
+  <data name="LeaguePointsWindow_Suma" xml:space="preserve">
     <value>Sum</value>
   </data>
   <data name="MainWindow_CMenu_Disqualification" xml:space="preserve">
@@ -690,7 +690,7 @@ Path: {0}
   <data name="MainWindow_CMenu_RunnerSunny" xml:space="preserve">
     <value>Sunny</value>
   </data>
-  <data name="LiguePointsWindow_Wygrana" xml:space="preserve">
+  <data name="LeaguePointsWindow_Wygrana" xml:space="preserve">
     <value>Win</value>
   </data>
   <data name="RoundControl_DrugaGra" xml:space="preserve">

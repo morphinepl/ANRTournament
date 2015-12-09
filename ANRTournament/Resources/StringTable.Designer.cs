@@ -234,198 +234,198 @@ namespace ANRTournament.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Suma małych punktów.
         /// </summary>
-        internal static string LiguePointsWindow_MalePunkty {
+        internal static string LeaguePointsWindow_MalePunkty {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_MalePunkty", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_MalePunkty", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 1sze.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce1 {
+        internal static string LeaguePointsWindow_Miejsce1 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce1", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 2gie.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce2 {
+        internal static string LeaguePointsWindow_Miejsce2 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce2", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce2", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 3cie.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce3 {
+        internal static string LeaguePointsWindow_Miejsce3 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce3", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce3", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 4te.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce4 {
+        internal static string LeaguePointsWindow_Miejsce4 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce4", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce4", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 5te.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce5 {
+        internal static string LeaguePointsWindow_Miejsce5 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce5", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce5", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 6te.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce6 {
+        internal static string LeaguePointsWindow_Miejsce6 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce6", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce6", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 7me.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce7 {
+        internal static string LeaguePointsWindow_Miejsce7 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce7", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce7", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 8me.
         /// </summary>
-        internal static string LiguePointsWindow_Miejsce8 {
+        internal static string LeaguePointsWindow_Miejsce8 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Miejsce8", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Miejsce8", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Najlepszy we frakcji.
         /// </summary>
-        internal static string LiguePointsWindow_NajlepszyRasa {
+        internal static string LeaguePointsWindow_NajlepszyRasa {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_NajlepszyRasa", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_NajlepszyRasa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Opcje punktacji.
         /// </summary>
-        internal static string LiguePointsWindow_Opcje {
+        internal static string LeaguePointsWindow_Opcje {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Opcje", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Opcje", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Przegrana.
         /// </summary>
-        internal static string LiguePointsWindow_Przegrana {
+        internal static string LeaguePointsWindow_Przegrana {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Przegrana", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Przegrana", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remis.
         /// </summary>
-        internal static string LiguePointsWindow_Remis {
+        internal static string LeaguePointsWindow_Remis {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Remis", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Remis", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Suma.
         /// </summary>
-        internal static string LiguePointsWindow_Suma {
+        internal static string LeaguePointsWindow_Suma {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Suma", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Suma", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Punkty ligowe.
         /// </summary>
-        internal static string LiguePointsWindow_Title {
+        internal static string LeaguePointsWindow_Title {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Title", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Uczestnictwo.
         /// </summary>
-        internal static string LiguePointsWindow_Uczestnictwo {
+        internal static string LeaguePointsWindow_Uczestnictwo {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Uczestnictwo", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Uczestnictwo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wygrana.
         /// </summary>
-        internal static string LiguePointsWindow_Wygrana {
+        internal static string LeaguePointsWindow_Wygrana {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Wygrana", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Wygrana", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wygrana 1:0.
         /// </summary>
-        internal static string LiguePointsWindow_Wygrana_1_0 {
+        internal static string LeaguePointsWindow_Wygrana_1_0 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Wygrana_1_0", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Wygrana_1_0", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wygrana 2:0.
         /// </summary>
-        internal static string LiguePointsWindow_Wygrana_2_0 {
+        internal static string LeaguePointsWindow_Wygrana_2_0 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Wygrana_2_0", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Wygrana_2_0", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wygrana 2:1.
         /// </summary>
-        internal static string LiguePointsWindow_Wygrana_2_1 {
+        internal static string LeaguePointsWindow_Wygrana_2_1 {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Wygrana_2_1", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Wygrana_2_1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to BYE.
         /// </summary>
-        internal static string LiguePointsWindow_Wygrana_BYE {
+        internal static string LeaguePointsWindow_Wygrana_BYE {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Wygrana_BYE", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Wygrana_BYE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Zapisz do pliku.
         /// </summary>
-        internal static string LiguePointsWindow_Zapisz {
+        internal static string LeaguePointsWindow_Zapisz {
             get {
-                return ResourceManager.GetString("LiguePointsWindow_Zapisz", resourceCulture);
+                return ResourceManager.GetString("LeaguePointsWindow_Zapisz", resourceCulture);
             }
         }
         
@@ -863,9 +863,9 @@ namespace ANRTournament.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Punkty ligowe.
         /// </summary>
-        internal static string MainWindow_LiguePoints {
+        internal static string MainWindow_LeaguePoints {
             get {
-                return ResourceManager.GetString("MainWindow_LiguePoints", resourceCulture);
+                return ResourceManager.GetString("MainWindow_LeaguePoints", resourceCulture);
             }
         }
         

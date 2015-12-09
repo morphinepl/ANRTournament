@@ -114,8 +114,8 @@
     <Compile Include="InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LiguePointsWindow.xaml.cs">
-      <DependentUpon>LiguePointsWindow.xaml</DependentUpon>
+    <Compile Include="LeaguePointsWindow.xaml.cs">
+      <DependentUpon>LeaguePointsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Objects\DoubleEliminationPlayoffs16.cs" />
     <Compile Include="Objects\DoubleEliminationPlayoffs8.cs" />
@@ -123,7 +123,7 @@
     <Compile Include="Objects\GalaktaSelectingPlayer.cs" />
     <Compile Include="Objects\Identity.cs" />
     <Compile Include="Objects\Int32ObservableCollection.cs" />
-    <Compile Include="Objects\LiguePoints.cs" />
+    <Compile Include="Objects\LeaguePoints.cs" />
     <Compile Include="Objects\Settings.cs" />
     <Compile Include="Objects\Tracer.cs" />
     <Compile Include="Resources\StringTable.Designer.cs">
@@ -213,7 +213,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LiguePointsWindow.xaml">
+    <Page Include="LeaguePointsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -133,7 +133,7 @@
                             <Separator />
                             <MenuItem Name="mniStatistics" Header="{lex:Loc MainWindow_Statistics}" Click="mniStatistics_Click"/>
                             <Separator />
-                            <MenuItem Name="mniLiguePoints" Header="{lex:Loc MainWindow_LiguePoints}" Click="mniLiguePoints_Click"/>
+                            <MenuItem Name="mniLeaguePoints" Header="{lex:Loc MainWindow_LeaguePoints}" Click="mniLeaguePoints_Click"/>
                             <Separator />
                             <MenuItem Name="mniExit" Header="{lex:Loc MainWindow_Zamknij}" Click="mniExit_Click">
                                 <MenuItem.Icon>

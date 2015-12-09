@@ -527,9 +527,9 @@ namespace ANRTournament
             (new StatisticsWindow(this.tournament)).ShowDialog();
         }
 
-        private void mniLiguePoints_Click(object sender, RoutedEventArgs e)
+        private void mniLeaguePoints_Click(object sender, RoutedEventArgs e)
         {
-            (new LiguePointsWindow(this.tournament)).ShowDialog();
+            (new LeaguePointsWindow(this.tournament)).ShowDialog();
         }
 
         private void mniPlayersImport_Click(object sender, RoutedEventArgs e)

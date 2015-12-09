@@ -71,23 +71,23 @@ namespace ANRTournament.Objects
 
         #region Punkty ligowe
 
-        public int LiguePointsWin = 3;
-        public int LiguePointsWin_BYE = 3;
-        public int LiguePointsDraw = 1;
-        public int LiguePointsLoose = 0;
+        public int LeaguePointsWin = 3;
+        public int LeaguePointsWin_BYE = 3;
+        public int LeaguePointsDraw = 1;
+        public int LeaguePointsLoose = 0;
 
-        public int LiguePointsFactionCorpo = 1;
-        public int LiguePointsFactionRunner = 1;
-        public int LiguePointsTournament = 1;
-        public int LiguePoints1stPlace = 3;
-        public int LiguePoints2ndPlace = 2;
-        public int LiguePoints3rdPlace = 1;
-        public int LiguePoints4thPlace = 0;
-        public int LiguePoints5thPlace = 0;
-        public int LiguePoints6thPlace = 0;
-        public int LiguePoints7thPlace = 0;
-        public int LiguePoints8thPlace = 0;
-        public bool LiguePointsPlusMinus = false;
+        public int LeaguePointsFactionCorpo = 1;
+        public int LeaguePointsFactionRunner = 1;
+        public int LeaguePointsTournament = 1;
+        public int LeaguePoints1stPlace = 3;
+        public int LeaguePoints2ndPlace = 2;
+        public int LeaguePoints3rdPlace = 1;
+        public int LeaguePoints4thPlace = 0;
+        public int LeaguePoints5thPlace = 0;
+        public int LeaguePoints6thPlace = 0;
+        public int LeaguePoints7thPlace = 0;
+        public int LeaguePoints8thPlace = 0;
+        public bool LeaguePointsPlusMinus = false;
         
         #endregion
 
