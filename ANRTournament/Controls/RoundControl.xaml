@@ -129,7 +129,6 @@
                           CanUserDeleteRows="False"
                           CanUserReorderColumns="False"
                           CanUserSortColumns="True"
-                          IsEnabled="{Binding Path=ScoreEnabled, Mode=OneWay}"
                           Style="{StaticResource DataGridStyle}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{lex:Loc Key=RoundControl_Nr, Assembly=ANRTournament, Dict=Resources.StringTable}"
@@ -186,7 +185,7 @@
                                                 SortMemberPath="Score">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid IsEnabled="{Binding Path=DataContext.ScoreEnabled, Mode=OneWay, RelativeSource={RelativeSource AncestorType=DataGrid}}">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
