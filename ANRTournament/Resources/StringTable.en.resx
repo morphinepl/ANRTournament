@@ -639,6 +639,9 @@ Path: {0}
   <data name="MainWindow_CMenu_Payment" xml:space="preserve">
     <value>Payment</value>
   </data>
+  <data name="MainWindow_CMenu_AddPlayerToLastRound" xml:space="preserve">
+    <value>Add player to the last round</value>
+  </data>
   <data name="SettingsWindow_BYEDlaPrzegranych" xml:space="preserve">
     <value>BYE only for loser</value>
   </data>

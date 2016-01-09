@@ -648,6 +648,9 @@ Czy chcesz kontynuować?</value>
   <data name="MainWindow_CMenu_Payment" xml:space="preserve">
     <value>Płatność</value>
   </data>
+  <data name="MainWindow_CMenu_AddPlayerToLastRound" xml:space="preserve">
+    <value>Dodaj gracza do ostatniej rundy</value>
+  </data>
   <data name="SettingsWindow_BYEDlaPrzegranych" xml:space="preserve">
     <value>BYE tylko dla przegranych</value>
   </data>

@@ -633,6 +633,9 @@ Möchtest du fortfahren?</value>
   <data name="MainWindow_CMenu_Payment" xml:space="preserve">
     <value>Zahlung</value>
   </data>
+  <data name="MainWindow_CMenu_AddPlayerToLastRound" xml:space="preserve">
+    <value>Füge Spieler auf der letzten Runde</value>
+  </data>
   <data name="SettingsWindow_BYEDlaPrzegranych" xml:space="preserve">
     <value>Freilos nur für Verlierer</value>
   </data>
