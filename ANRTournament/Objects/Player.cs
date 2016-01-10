@@ -50,6 +50,7 @@ namespace ANRTournament.Objects
         private int bucholz = 0;
         private int mbucholz = 0;
         private bool payment = false;
+        private bool addPlayerToLastRound = false;
 
         private int runnerwins = 0;
         private int corpowins = 0;
@@ -436,6 +437,22 @@ namespace ANRTournament.Objects
                 {
                     this.payment = value;
                     NotifyPropertyChanged("Payment");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Dodaj do ostatniej rundy
+        /// </summary>
+        public bool AddPlayerToLastRound
+        {
+            get { return this.addPlayerToLastRound; }
+            set
+            {
+                if (value != this.addPlayerToLastRound)
+                {
+                    this.addPlayerToLastRound = value;
+                    NotifyPropertyChanged("AddPlayerToLastRound");
                 }
             }
         }

@@ -149,9 +149,24 @@
                   Grid.ColumnSpan="2"
                   Grid.Column="0"
                   HorizontalAlignment="Right"
-                  Margin="0,10,185,20"
+                  Margin="0,10,265,20"
                   FlowDirection="RightToLeft"
                   Content="{lex:Loc MainWindow_CMenu_Payment}">
+            <CheckBox.Resources>
+                <Style TargetType="{x:Type Path}">
+                    <Setter Property="FlowDirection" Value="LeftToRight"/>
+                </Style>
+            </CheckBox.Resources>
+        </CheckBox>
+
+        <CheckBox x:Name="chkAddPlayerToLastRound"
+                  IsChecked="{Binding AddPlayerToLastRound, Mode=TwoWay}"
+                  Grid.Row="8"
+                  Grid.Column="1"
+                  HorizontalAlignment="Left"
+                  Margin="10,10,0,20"
+                  FlowDirection="LeftToRight"
+                  Content="{lex:Loc MainWindow_CMenu_AddPlayerToLastRound}">
             <CheckBox.Resources>
                 <Style TargetType="{x:Type Path}">
                     <Setter Property="FlowDirection" Value="LeftToRight"/>
@@ -164,7 +179,7 @@
                 Grid.Row="9" 
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Left" 
-                Margin="20,0,0,5" 
+                Margin="45,0,0,5" 
                 Name="btnOk"
                 Width="100" 
                 Height="23"/>

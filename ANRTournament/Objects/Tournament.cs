@@ -902,6 +902,39 @@ namespace ANRTournament.Objects
                     this.allGames.Remove(game);
                 }
             }
+
+            if (Rounds.Count > 0)
+            {
+                bool addToLastRound = playerToAdd.AddPlayerToLastRound;
+                if (addToLastRound)
+                {
+                    ObservableCollection<Round> activeRounds = Rounds;
+                    Round lastRound = activeRounds[activeRounds.Count - 1];
+                    Game lastGame = lastRound.Games[lastRound.Games.Count - 1];
+                    if (lastGame.IsBYE)
+                    {
+                        lastGame.IsBYE = false;
+                        lastGame.Player2Alias = playerToAdd.Alias;
+                        lastGame.Player2Id = playerToAdd.Id;
+                        lastGame.Player2RaceCorpo = playerToAdd.RaceCorpo;
+                        lastGame.Player2RaceRunner = playerToAdd.RaceRunner;
+                    }
+                    else
+                    {
+                        Game game = new Game()
+                        {
+                            Player1Alias = playerToAdd.Alias,
+                            Player1Id = playerToAdd.Id,
+                            Player1RaceCorpo = playerToAdd.RaceCorpo,
+                            Player1RaceRunner = playerToAdd.RaceRunner,
+                            IsBYE = true,
+                            Number = lastGame.Number + 1,
+                        };
+                        lastRound.Games.Add(game);
+                    }
+
+                }
+            }
         }
 
         public void ActivatePlayer(Player playerToActivate)
