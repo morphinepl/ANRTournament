@@ -469,7 +469,7 @@ Möchtest du fortfahren?</value>
     <value>Optionen</value>
   </data>
   <data name="SettingsWindow_TabelaWynikowIRundy" xml:space="preserve">
-    <value>Ergebnistabelle und Runden in separaten Registerkarten (Nach dem Ändern das Programm neustarten)</value>
+    <value>Ergebnistabelle und Runden in separaten Registerkarten (erfordert Neustart)</value>
   </data>
   <data name="SettingsWindow_Zamknij" xml:space="preserve">
     <value>Schließen</value>
@@ -631,10 +631,10 @@ Möchtest du fortfahren?</value>
     <value>G</value>
   </data>
   <data name="MainWindow_CMenu_Payment" xml:space="preserve">
-    <value>Zahlung</value>
+    <value>Bezahlt?</value>
   </data>
   <data name="MainWindow_CMenu_AddPlayerToLastRound" xml:space="preserve">
-    <value>Füge Spieler auf der letzten Runde</value>
+    <value>neuen Spieler der letzten Runde hinzufügen</value>
   </data>
   <data name="SettingsWindow_BYEDlaPrzegranych" xml:space="preserve">
     <value>Freilos nur für Verlierer</value>
@@ -646,7 +646,7 @@ Möchtest du fortfahren?</value>
     <value>Freilos Optionen</value>
   </data>
   <data name="SettingsWindow_SystemKostki_BYEHasDice" xml:space="preserve">
-    <value>Mark Frielos als gestartet</value>
+    <value>Mark Freilos als gestartet</value>
   </data>
   <data name="MainWindow_FrakcjaCorpo" xml:space="preserve">
     <value>Corporation</value>
@@ -694,7 +694,7 @@ Möchtest du fortfahren?</value>
     <value>Nur das erste Spiel</value>
   </data>
   <data name="SettingsWindow_RandomTieAfterPoints" xml:space="preserve">
-    <value>Use random tiebreaker right after points (only for generate rounds)</value>
+    <value>Zufall als Tiebreaker bei gleicher Punktzahl verwenden (nur beim Erstellen der Runden)</value>
   </data>
   <data name="MainWindow_StartPlayoffsTop16" xml:space="preserve">
     <value>Start TOP16</value>
