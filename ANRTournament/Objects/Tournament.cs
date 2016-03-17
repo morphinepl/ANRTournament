@@ -1138,41 +1138,85 @@ namespace ANRTournament.Objects
             {
                 Player player = this.pointstable.Where(p => p.Id == item.Key).First();
 
-                player.Bucholz = 0;
-                player.MBucholz = 0;
 
-                if (player.SuperBYE && this.rounds.Count > 0)
-                {
-                    player.Bucholz += (this.rounds.Count - 1) * 4;
-                }
+                //     player.Bucholz = 0;
+                //    player.MBucholz = 0;
+                player.Sos = 0.0m;
 
-                List<int> minmax = new List<int>();
 
+    //            if (player.SuperBYE && this.rounds.Count > 0)
+     //           {
+     //               player.Bucholz += (this.rounds.Count - 1) * 4;
+    //            }
+
+                //             List<int> minmax = new List<int>();
+
+                int numberOfOponents = 0;
+                decimal sosPartsSum = 0.0m;
+                
                 foreach (Guid oponentId in item.Value)
                 {
                     if (oponentId == Guid.Empty)
                     {
-                        minmax.Add(0);
+                        //        minmax.Add(0);
                         continue;
                     }
+                    numberOfOponents++;
+                    //int points = this.pointstable.Where(p => p.Id == oponentId).First().Points;
+                    //                  minmax.Add(points);
+                    //                  player.Bucholz += points;
 
                     int points = this.pointstable.Where(p => p.Id == oponentId).First().Points;
-                    minmax.Add(points);
-                    player.Bucholz += points;
+                    string name = this.pointstable.Where(p => p.Id == oponentId).First().Alias;
+                    Console.WriteLine(name);
+                    int gamesCount = this.pointstable.Where(p => p.Id == oponentId).First().GamesCount;
+                    decimal sosPart = Decimal.Divide(points, gamesCount);
+                    sosPartsSum += sosPart;
+              
+                   
+                }
+                if (numberOfOponents != 0)
+                {
+                    player.Sos = Decimal.Round(Decimal.Divide(sosPartsSum,numberOfOponents), 2);
+                    
+
                 }
 
-                if (minmax.Count > 2)
+
+   //             if (minmax.Count > 2)
+   //             {
+  //                  if (player.SuperBYE) player.MBucholz = player.Bucholz - minmax.Min(); // bo super bye jest maxem
+  //                  else player.MBucholz = player.Bucholz - minmax.Max() - minmax.Min();
+  //              }
+            }
+            foreach (KeyValuePair<Guid, List<Guid>> item in playersOponents)
+            {
+                Player player = this.pointstable.Where(p => p.Id == item.Key).First();
+                decimal extSosPartsSum = 0.0m;
+                int numberOfOponents = 0;
+                foreach (Guid oponentId in item.Value)
                 {
-                    if (player.SuperBYE) player.MBucholz = player.Bucholz - minmax.Min(); // bo super bye jest maxem
-                    else player.MBucholz = player.Bucholz - minmax.Max() - minmax.Min();
+                    if (oponentId == Guid.Empty)
+                    {
+                        //        minmax.Add(0);
+                        continue;
+                    }
+                    numberOfOponents++;
+                    extSosPartsSum += this.pointstable.Where(p => p.Id == oponentId).First().Sos;
+                }
+                if (numberOfOponents != 0)
+                {
+                    player.Extsos = Decimal.Round(Decimal.Divide(extSosPartsSum, numberOfOponents), 2);
+
                 }
             }
-
-            //przeliczenie miejsc z uwzględnieniem przeciwników
-            IEnumerable<Player> sortedplayers = this.pointstable.OrderByDescending(p => p.Points)
+                //przeliczenie miejsc z uwzględnieniem przeciwników
+                IEnumerable<Player> sortedplayers = this.pointstable.OrderByDescending(p => p.Points)
                 //.ThenByDescending(p => p.MBucholz)
                 //.ThenByDescending(p => p.CorpoRunnerTieBreak)
-                                                                .ThenByDescending(p => p.Bucholz)
+                //.ThenByDescending(p => p.Bucholz)
+                 //.ThenByDescending(p => p.Bucholz)
+                                                                .ThenByDescending(p => p.Sos)
                 //.ThenByDescending(p => p.SmallPointsPlus)
                 //.ThenByDescending(p => (p.SmallPointsPlus - p.SmallPointsMinus))
                                                                 .ThenByDescending(p => p.LastTieBreak);
