@@ -609,6 +609,15 @@
                                                 </Style>
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>-->
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_HtH, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                x:Name="colHeadToHead"
+                                                                Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=GroupPointWinner, Mode=OneWay, Converter={StaticResource BooleanToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>                                        
 
                                         <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
                                                             x:Name="colBucholz"
@@ -1149,6 +1158,15 @@
                                                 </Style>
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn Header="{lex:LocText Key=MainWindow_HtH, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                                Width="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Stretch="Uniform" Height="16" Width="16" Source="{Binding Path=Player.GroupPointWinner, Mode=OneWay, Converter={StaticResource BooleanToImageConverter}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
 
                                         <DataGridTextColumn Header="+/-"
                                                             Width="Auto"
