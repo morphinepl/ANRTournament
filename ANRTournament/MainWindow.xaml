@@ -324,7 +324,7 @@
                                        Margin="9,8,0,0"
                                        FontSize="16" />
 
-                                <xctrl:WatermarkTextBox Width="130"                         
+                                              <xctrl:WatermarkTextBox Width="130"                         
                                                         HorizontalAlignment="Right" 
                                                         VerticalAlignment="Top" 
                                                         Margin="0,9,370,0"
@@ -610,11 +610,10 @@
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>-->
 
-                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_MB, Assembly=ANRTournament, Dict=Resources.StringTable}"
-                                                            x:Name="colMBucholz"
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colBucholz"
                                                             Width="Auto"
-                                                            Visibility="Collapsed"
-                                                            Binding="{Binding Path=MBucholz, Mode=OneWay}">
+                                                            Binding="{Binding Path=Sos, Mode=OneWay}">
                                             <DataGridTextColumn.ElementStyle>
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="TextAlignment" Value="Right"/>
@@ -624,10 +623,10 @@
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
-                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
-                                                            x:Name="colBucholz"
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_MB, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                                            x:Name="colMBucholz"
                                                             Width="Auto"
-                                                            Binding="{Binding Path=Bucholz, Mode=OneWay}">
+                                                            Binding="{Binding Path=Extsos, Mode=OneWay}">
                                             <DataGridTextColumn.ElementStyle>
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="TextAlignment" Value="Right"/>
@@ -1162,10 +1161,9 @@
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
-                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_MB, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
                                                             Width="Auto"
-                                                            Visibility="Collapsed"
-                                                            Binding="{Binding Path=Player.MBucholz, Mode=OneWay}">
+                                                            Binding="{Binding Path=Player.Sos, Mode=OneWay}">
                                             <DataGridTextColumn.ElementStyle>
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="TextAlignment" Value="Right"/>
@@ -1175,9 +1173,9 @@
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
-                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_B, Assembly=ANRTournament, Dict=Resources.StringTable}"
+                                        <DataGridTextColumn Header="{lex:LocText Key=MainWindow_MB, Assembly=ANRTournament, Dict=Resources.StringTable}"
                                                             Width="Auto"
-                                                            Binding="{Binding Path=Player.Bucholz, Mode=OneWay}">
+                                                            Binding="{Binding Path=Player.Extsos, Mode=OneWay}">
                                             <DataGridTextColumn.ElementStyle>
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="TextAlignment" Value="Right"/>

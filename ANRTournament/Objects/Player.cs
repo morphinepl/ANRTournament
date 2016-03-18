@@ -51,6 +51,8 @@ namespace ANRTournament.Objects
         private int mbucholz = 0;
         private bool payment = false;
         private bool addPlayerToLastRound = false;
+        private decimal sos = 0.0m;
+        private decimal extsos = 0.0m;
 
         private int runnerwins = 0;
         private int corpowins = 0;
@@ -501,6 +503,38 @@ namespace ANRTournament.Objects
                 {
                     this.mbucholz = value;
                     NotifyPropertyChanged("MBucholz");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Strength of Schedule
+        /// </summary>
+        public decimal Sos
+        {
+            get { return this.sos; }
+            set
+            {
+                if (value != this.sos)
+                {
+                    this.sos = value;
+                    NotifyPropertyChanged("Sos");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Extended Strength of Schedule
+        /// </summary>
+        public decimal Extsos
+        {
+            get { return this.extsos; }
+            set
+            {
+                if (value != this.extsos)
+                {
+                    this.extsos = value;
+                    NotifyPropertyChanged("Extended Extsos");
                 }
             }
         }
