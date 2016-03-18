@@ -186,6 +186,9 @@
   <data name="MainWindow_DC" xml:space="preserve">
     <value>DC</value>
   </data>
+  <data name="MainWindow_HtH" xml:space="preserve">
+    <value>HtH</value>
+  </data>
   <data name="MainWindow_Deckcheck" xml:space="preserve">
     <value>Deckcheck</value>
   </data>

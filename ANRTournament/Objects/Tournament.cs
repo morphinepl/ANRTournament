@@ -1029,6 +1029,9 @@ namespace ANRTournament.Objects
         public void RefreshPointsTable()
         {
             Dictionary<Guid, List<Guid>> playersOponents = new Dictionary<Guid, List<Guid>>();
+            //     Dictionary<Guid, List<Guid>> victoriesCorp = new Dictionary<Guid, List<Guid>>();
+            //    Dictionary<Guid, List<Guid>> victoriesRunner = new Dictionary<Guid, List<Guid>>();
+
 
             #region Przeliczenie punktów
 
@@ -1074,8 +1077,15 @@ namespace ANRTournament.Objects
                             smallpointsminus += game.Player2Score1 + game.Player2Score2;
                             points += game.Player1Score;
 
-                            if (game.Player1Score1 > game.Player2Score1) corpowins++;
-                            if (game.Player1Score2 > game.Player2Score2) runnerwins++;
+                            if (game.Player1Score1 > game.Player2Score1)
+                            {
+                                corpowins++;
+                                
+                            }
+                            if (game.Player1Score2 > game.Player2Score2)
+                            {
+                                runnerwins++;
+                            }
 
                             //if (game.Player1Score1 == 10 && game.Player1Score2 < 10 && game.Player1Score2 > game.Player2Score2) runnerwins++;
                             //if (game.Player1Score2 == 10 && game.Player1Score1 < 10 && game.Player1Score1 > game.Player2Score1) corpowins++;
@@ -1101,8 +1111,14 @@ namespace ANRTournament.Objects
                             smallpointsplus += game.Player2Score1 + game.Player2Score2;
                             points += game.Player2Score;
 
-                            if (game.Player2Score2 > game.Player1Score2) corpowins++;
-                            if (game.Player2Score1 > game.Player1Score1) runnerwins++;
+                            if (game.Player2Score2 > game.Player1Score2)
+                            {
+                                corpowins++;
+                            }
+                            if (game.Player2Score1 > game.Player1Score1)
+                            {
+                                runnerwins++;
+                            }
 
                             //if (game.Player2Score2 == 10 && game.Player2Score1 < 10 && game.Player2Score1 > game.Player1Score1) runnerwins++;
                             //if (game.Player2Score1 == 10 && game.Player2Score2 < 10 && game.Player2Score2 > game.Player1Score2) corpowins++;
@@ -1131,25 +1147,42 @@ namespace ANRTournament.Objects
 
             #endregion
 
+            #region Przeliczenie grup punktowych            
+            foreach (Player player in this.pointstable)
+            {
+                player.GroupPointWinner = false;                //wyciągnięcie grupy punktowej playera
+                List<Player> grupapunktowa = this.pointstable.Where(p => p.Points == player.Points && p.Id != player.Id).ToList(); List<Game> gryplyerawgrupie = new List<Game>();                //pobierz wszystkie gry playera z graczami z grupy punktowej
+                foreach (Player playergrupa in grupapunktowa)
+                {
+                    List<Game> gry = this.rounds.SelectMany(r => r.Games).Where(r => (r.Player1Id == player.Id && r.Player2Id == playergrupa.Id)
+                                                                                  || (r.Player2Id == player.Id && r.Player1Id == playergrupa.Id)).ToList(); if (gry.Count() > 0)
+                    {
+                        gryplyerawgrupie.Add(gry.First());
+                    }
+                }                //jeśli nie grał ze wszystkimi z grupy - continue
+                if (grupapunktowa.Count == 0 || grupapunktowa.Count != gryplyerawgrupie.Count) continue;                //grał ze wszystkimi - sprawdzamy czy wszystkie wygrał                
+                bool przegral = false;
+                foreach (var gra in gryplyerawgrupie)
+                {
+                    if (player.Id != gra.GetWinnerId())
+                    {
+                        przegral = true;
+                        break;
+                    }
+                }
+                if (!przegral) player.GroupPointWinner = true;
+            }
+            #endregion
+
             #region Przydzielanie miejsc w tabeli
 
             //przeliczenie współczynników przeciwników
+
             foreach (KeyValuePair<Guid, List<Guid>> item in playersOponents)
             {
                 Player player = this.pointstable.Where(p => p.Id == item.Key).First();
 
-
-                //     player.Bucholz = 0;
-                //    player.MBucholz = 0;
                 player.Sos = 0.0m;
-
-
-    //            if (player.SuperBYE && this.rounds.Count > 0)
-     //           {
-     //               player.Bucholz += (this.rounds.Count - 1) * 4;
-    //            }
-
-                //             List<int> minmax = new List<int>();
 
                 int numberOfOponents = 0;
                 decimal sosPartsSum = 0.0m;
@@ -1158,13 +1191,9 @@ namespace ANRTournament.Objects
                 {
                     if (oponentId == Guid.Empty)
                     {
-                        //        minmax.Add(0);
                         continue;
                     }
                     numberOfOponents++;
-                    //int points = this.pointstable.Where(p => p.Id == oponentId).First().Points;
-                    //                  minmax.Add(points);
-                    //                  player.Bucholz += points;
 
                     int points = this.pointstable.Where(p => p.Id == oponentId).First().Points;
                     string name = this.pointstable.Where(p => p.Id == oponentId).First().Alias;
@@ -1178,16 +1207,9 @@ namespace ANRTournament.Objects
                 if (numberOfOponents != 0)
                 {
                     player.Sos = Decimal.Round(Decimal.Divide(sosPartsSum,numberOfOponents), 2);
-                    
-
                 }
 
 
-   //             if (minmax.Count > 2)
-   //             {
-  //                  if (player.SuperBYE) player.MBucholz = player.Bucholz - minmax.Min(); // bo super bye jest maxem
-  //                  else player.MBucholz = player.Bucholz - minmax.Max() - minmax.Min();
-  //              }
             }
             foreach (KeyValuePair<Guid, List<Guid>> item in playersOponents)
             {
@@ -1198,7 +1220,6 @@ namespace ANRTournament.Objects
                 {
                     if (oponentId == Guid.Empty)
                     {
-                        //        minmax.Add(0);
                         continue;
                     }
                     numberOfOponents++;
@@ -1216,6 +1237,7 @@ namespace ANRTournament.Objects
                 //.ThenByDescending(p => p.CorpoRunnerTieBreak)
                 //.ThenByDescending(p => p.Bucholz)
                  //.ThenByDescending(p => p.Bucholz)
+                                                                .ThenByDescending(p => p.GroupPointWinner)
                                                                 .ThenByDescending(p => p.Sos)
                 //.ThenByDescending(p => p.SmallPointsPlus)
                 //.ThenByDescending(p => (p.SmallPointsPlus - p.SmallPointsMinus))

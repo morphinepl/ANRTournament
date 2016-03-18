@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ANRTournament.Resources {
+namespace ANRTournament.Resources
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,562 +23,686 @@ namespace ANRTournament.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class StringTable {
-        
+    internal class StringTable
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StringTable() {
+        internal StringTable()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ANRTournament.Resources.StringTable", typeof(StringTable).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to O programie....
         /// </summary>
-        internal static string AboutWindow_OProgramie {
-            get {
+        internal static string AboutWindow_OProgramie
+        {
+            get
+            {
                 return ResourceManager.GetString("AboutWindow_OProgramie", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Programowanie:.
         /// </summary>
-        internal static string AboutWindow_Programowanie {
-            get {
+        internal static string AboutWindow_Programowanie
+        {
+            get
+            {
                 return ResourceManager.GetString("AboutWindow_Programowanie", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zgłaszanie problemów:.
         /// </summary>
-        internal static string AboutWindow_ZglaszanieProblemow {
-            get {
+        internal static string AboutWindow_ZglaszanieProblemow
+        {
+            get
+            {
                 return ResourceManager.GetString("AboutWindow_ZglaszanieProblemow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Timer.
         /// </summary>
-        internal static string BigTimerWindow_Timer {
-            get {
+        internal static string BigTimerWindow_Timer
+        {
+            get
+            {
                 return ResourceManager.GetString("BigTimerWindow_Timer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anuluj.
         /// </summary>
-        internal static string CreateRoundWindow_Anuluj {
-            get {
+        internal static string CreateRoundWindow_Anuluj
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_Anuluj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz 1.
         /// </summary>
-        internal static string CreateRoundWindow_Gracz1 {
-            get {
+        internal static string CreateRoundWindow_Gracz1
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_Gracz1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz 2.
         /// </summary>
-        internal static string CreateRoundWindow_Gracz2 {
-            get {
+        internal static string CreateRoundWindow_Gracz2
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_Gracz2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Możliwe gry.
         /// </summary>
-        internal static string CreateRoundWindow_MozliweGry {
-            get {
+        internal static string CreateRoundWindow_MozliweGry
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_MozliweGry", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Niepełna runda!.
         /// </summary>
-        internal static string CreateRoundWindow_NiepelnaRunda {
-            get {
+        internal static string CreateRoundWindow_NiepelnaRunda
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_NiepelnaRunda", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Runda.
         /// </summary>
-        internal static string CreateRoundWindow_Runda {
-            get {
+        internal static string CreateRoundWindow_Runda
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_Runda", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tworzenie rundy.
         /// </summary>
-        internal static string CreateRoundWindow_TworzenieRundy {
-            get {
+        internal static string CreateRoundWindow_TworzenieRundy
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_TworzenieRundy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Utwórz.
         /// </summary>
-        internal static string CreateRoundWindow_Utworz {
-            get {
+        internal static string CreateRoundWindow_Utworz
+        {
+            get
+            {
                 return ResourceManager.GetString("CreateRoundWindow_Utworz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to DC.
         /// </summary>
-        internal static string DeckCheckWindow_DC {
-            get {
+        internal static string DeckCheckWindow_DC
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_DC", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Deckcheck.
         /// </summary>
-        internal static string DeckCheckWindow_Deckcheck {
-            get {
+        internal static string DeckCheckWindow_Deckcheck
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_Deckcheck", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Frakcja.
         /// </summary>
-        internal static string DeckCheckWindow_Frakcja {
-            get {
+        internal static string DeckCheckWindow_Frakcja
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_Frakcja", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Imię i nazwisko.
         /// </summary>
-        internal static string DeckCheckWindow_ImieINazwisko {
-            get {
+        internal static string DeckCheckWindow_ImieINazwisko
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_ImieINazwisko", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Liczba graczy do losowania.
         /// </summary>
-        internal static string DeckCheckWindow_LiczbaGraczyDoLosowania {
-            get {
+        internal static string DeckCheckWindow_LiczbaGraczyDoLosowania
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_LiczbaGraczyDoLosowania", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Losuj.
         /// </summary>
-        internal static string DeckCheckWindow_Losuj {
-            get {
+        internal static string DeckCheckWindow_Losuj
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_Losuj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nazwa.
         /// </summary>
-        internal static string DeckCheckWindow_Nazwa {
-            get {
+        internal static string DeckCheckWindow_Nazwa
+        {
+            get
+            {
                 return ResourceManager.GetString("DeckCheckWindow_Nazwa", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Suma małych punktów.
         /// </summary>
-        internal static string LeaguePointsWindow_MalePunkty {
-            get {
+        internal static string LeaguePointsWindow_MalePunkty
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_MalePunkty", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 1sze.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce1 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce1
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 2gie.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce2 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce2
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 3cie.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce3 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce3
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce3", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 4te.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce4 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce4
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce4", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 5te.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce5 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce5
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce5", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 6te.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce6 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce6
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce6", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 7me.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce7 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce7
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce7", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 8me.
         /// </summary>
-        internal static string LeaguePointsWindow_Miejsce8 {
-            get {
+        internal static string LeaguePointsWindow_Miejsce8
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Miejsce8", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Najlepszy we frakcji.
         /// </summary>
-        internal static string LeaguePointsWindow_NajlepszyRasa {
-            get {
+        internal static string LeaguePointsWindow_NajlepszyRasa
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_NajlepszyRasa", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Opcje punktacji.
         /// </summary>
-        internal static string LeaguePointsWindow_Opcje {
-            get {
+        internal static string LeaguePointsWindow_Opcje
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Opcje", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Przegrana.
         /// </summary>
-        internal static string LeaguePointsWindow_Przegrana {
-            get {
+        internal static string LeaguePointsWindow_Przegrana
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Przegrana", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Remis.
         /// </summary>
-        internal static string LeaguePointsWindow_Remis {
-            get {
+        internal static string LeaguePointsWindow_Remis
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Remis", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Suma.
         /// </summary>
-        internal static string LeaguePointsWindow_Suma {
-            get {
+        internal static string LeaguePointsWindow_Suma
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Suma", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Punkty ligowe.
         /// </summary>
-        internal static string LeaguePointsWindow_Title {
-            get {
+        internal static string LeaguePointsWindow_Title
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Uczestnictwo.
         /// </summary>
-        internal static string LeaguePointsWindow_Uczestnictwo {
-            get {
+        internal static string LeaguePointsWindow_Uczestnictwo
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Uczestnictwo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wygrana.
         /// </summary>
-        internal static string LeaguePointsWindow_Wygrana {
-            get {
+        internal static string LeaguePointsWindow_Wygrana
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Wygrana", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wygrana 1:0.
         /// </summary>
-        internal static string LeaguePointsWindow_Wygrana_1_0 {
-            get {
+        internal static string LeaguePointsWindow_Wygrana_1_0
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Wygrana_1_0", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wygrana 2:0.
         /// </summary>
-        internal static string LeaguePointsWindow_Wygrana_2_0 {
-            get {
+        internal static string LeaguePointsWindow_Wygrana_2_0
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Wygrana_2_0", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wygrana 2:1.
         /// </summary>
-        internal static string LeaguePointsWindow_Wygrana_2_1 {
-            get {
+        internal static string LeaguePointsWindow_Wygrana_2_1
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Wygrana_2_1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to BYE.
         /// </summary>
-        internal static string LeaguePointsWindow_Wygrana_BYE {
-            get {
+        internal static string LeaguePointsWindow_Wygrana_BYE
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Wygrana_BYE", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zapisz do pliku.
         /// </summary>
-        internal static string LeaguePointsWindow_Zapisz {
-            get {
+        internal static string LeaguePointsWindow_Zapisz
+        {
+            get
+            {
                 return ResourceManager.GetString("LeaguePointsWindow_Zapisz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 1 / 16 finału.
         /// </summary>
-        internal static string MainWindow_1_16 {
-            get {
+        internal static string MainWindow_1_16
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_1_16", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Półfinały.
         /// </summary>
-        internal static string MainWindow_1_2 {
-            get {
+        internal static string MainWindow_1_2
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_1_2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ćwierćfinały.
         /// </summary>
-        internal static string MainWindow_1_4 {
-            get {
+        internal static string MainWindow_1_4
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_1_4", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 1 / 8 finału.
         /// </summary>
-        internal static string MainWindow_1_8 {
-            get {
+        internal static string MainWindow_1_8
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_1_8", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to SoS.
         /// </summary>
-        internal static string MainWindow_B {
-            get {
+        internal static string MainWindow_B
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_B", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Usuń.
         /// </summary>
-        internal static string MainWindow_Clear {
-            get {
+        internal static string MainWindow_Clear
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Clear", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Przywróć gracza.
         /// </summary>
-        internal static string MainWindow_CMenu_ActivatePlayer {
-            get {
+        internal static string MainWindow_CMenu_ActivatePlayer
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_ActivatePlayer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Haas-Bioroid.
         /// </summary>
-        internal static string MainWindow_CMenu_CorpoHB {
-            get {
+        internal static string MainWindow_CMenu_CorpoHB
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_CorpoHB", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Jinteki.
         /// </summary>
-        internal static string MainWindow_CMenu_CorpoJinteki {
-            get {
+        internal static string MainWindow_CMenu_CorpoJinteki
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_CorpoJinteki", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to NBN.
         /// </summary>
-        internal static string MainWindow_CMenu_CorpoNBN {
-            get {
+        internal static string MainWindow_CMenu_CorpoNBN
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_CorpoNBN", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Weyland Consortium.
         /// </summary>
-        internal static string MainWindow_CMenu_CorpoWeyland {
-            get {
+        internal static string MainWindow_CMenu_CorpoWeyland
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_CorpoWeyland", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Usuń gracza.
         /// </summary>
-        internal static string MainWindow_CMenu_DeletePlayer {
-            get {
+        internal static string MainWindow_CMenu_DeletePlayer
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_DeletePlayer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dyskwalifikacja.
         /// </summary>
-        internal static string MainWindow_CMenu_Disqualification {
-            get {
+        internal static string MainWindow_CMenu_Disqualification
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_Disqualification", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Płatność.
         /// </summary>
-        internal static string MainWindow_CMenu_Payment {
-            get {
+        internal static string MainWindow_CMenu_Payment
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_Payment", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anarch.
         /// </summary>
-        internal static string MainWindow_CMenu_RunnerAnarch {
-            get {
+        internal static string MainWindow_CMenu_RunnerAnarch
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_RunnerAnarch", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Criminal.
         /// </summary>
-        internal static string MainWindow_CMenu_RunnerCriminal {
-            get {
+        internal static string MainWindow_CMenu_RunnerCriminal
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_RunnerCriminal", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shaper.
         /// </summary>
-        internal static string MainWindow_CMenu_RunnerShaper {
-            get {
+        internal static string MainWindow_CMenu_RunnerShaper
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_CMenu_RunnerShaper", resourceCulture);
             }
         }
@@ -618,1217 +743,1496 @@ namespace ANRTournament.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Data:.
         /// </summary>
-        internal static string MainWindow_Data {
-            get {
+        internal static string MainWindow_Data
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Data", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to DC.
         /// </summary>
-        internal static string MainWindow_DC {
-            get {
+        internal static string MainWindow_DC
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_DC", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to HtH.
+        /// </summary>
+        internal static string MainWindow_HtH
+        {
+            get
+            {
+                return ResourceManager.GetString("MainWindow_HtH", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Deckcheck.
         /// </summary>
-        internal static string MainWindow_Deckcheck {
-            get {
+        internal static string MainWindow_Deckcheck
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Deckcheck", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Czy na pewno chcesz usunąć playoffy?.
         /// </summary>
-        internal static string MainWindow_DeletePlayoffs {
-            get {
+        internal static string MainWindow_DeletePlayoffs
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_DeletePlayoffs", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Czy na pewno chcesz usunąć ostatnią rundę?.
         /// </summary>
-        internal static string MainWindow_DeleteRound {
-            get {
+        internal static string MainWindow_DeleteRound
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_DeleteRound", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dodaj.
         /// </summary>
-        internal static string MainWindow_Dodaj {
-            get {
+        internal static string MainWindow_Dodaj
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Dodaj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Drukuj klasyfikację końcową.
         /// </summary>
-        internal static string MainWindow_DrukujKlasyfikacjeKoncowa {
-            get {
+        internal static string MainWindow_DrukujKlasyfikacjeKoncowa
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_DrukujKlasyfikacjeKoncowa", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Drukuj rundę.
         /// </summary>
-        internal static string MainWindow_DrukujRunde {
-            get {
+        internal static string MainWindow_DrukujRunde
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_DrukujRunde", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edytuj.
         /// </summary>
-        internal static string MainWindow_Edytuj {
-            get {
+        internal static string MainWindow_Edytuj
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Edytuj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Eksport.
         /// </summary>
-        internal static string MainWindow_Eksport {
-            get {
+        internal static string MainWindow_Eksport
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Eksport", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Finał.
         /// </summary>
-        internal static string MainWindow_Final {
-            get {
+        internal static string MainWindow_Final
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Final", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Korporacja.
         /// </summary>
-        internal static string MainWindow_FrakcjaCorpo {
-            get {
+        internal static string MainWindow_FrakcjaCorpo
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_FrakcjaCorpo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Runner.
         /// </summary>
-        internal static string MainWindow_FrakcjaRunner {
-            get {
+        internal static string MainWindow_FrakcjaRunner
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_FrakcjaRunner", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Korp.
         /// </summary>
-        internal static string MainWindow_FrakCorp {
-            get {
+        internal static string MainWindow_FrakCorp
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_FrakCorp", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Run.
         /// </summary>
-        internal static string MainWindow_FrakRun {
-            get {
+        internal static string MainWindow_FrakRun
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_FrakRun", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to G.
         /// </summary>
-        internal static string MainWindow_G {
-            get {
+        internal static string MainWindow_G
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_G", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz.
         /// </summary>
-        internal static string MainWindow_Gracz {
-            get {
+        internal static string MainWindow_Gracz
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Gracz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracze.
         /// </summary>
-        internal static string MainWindow_Gracze {
-            get {
+        internal static string MainWindow_Gracze
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Gracze", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gra o trzecie miejsce.
         /// </summary>
-        internal static string MainWindow_GraOTrzecieMiejsce {
-            get {
+        internal static string MainWindow_GraOTrzecieMiejsce
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_GraOTrzecieMiejsce", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Imię i nazwisko.
         /// </summary>
-        internal static string MainWindow_ImieINazwisko {
-            get {
+        internal static string MainWindow_ImieINazwisko
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_ImieINazwisko", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to K.
         /// </summary>
-        internal static string MainWindow_K {
-            get {
+        internal static string MainWindow_K
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_K", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Klasyfikacja końcowa.
         /// </summary>
-        internal static string MainWindow_KlasyfikacjaKoncowa {
-            get {
+        internal static string MainWindow_KlasyfikacjaKoncowa
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_KlasyfikacjaKoncowa", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Klasyfikacja końcowa -&gt; HTML.
         /// </summary>
-        internal static string MainWindow_KlasyfikacjaKoncowaHTML {
-            get {
+        internal static string MainWindow_KlasyfikacjaKoncowaHTML
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_KlasyfikacjaKoncowaHTML", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Klasyfikacja końcowa -&gt; TXT (tabela formatowana).
         /// </summary>
-        internal static string MainWindow_KlasyfikacjaKoncowaTXTFormatted {
-            get {
+        internal static string MainWindow_KlasyfikacjaKoncowaTXTFormatted
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_KlasyfikacjaKoncowaTXTFormatted", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ostatnia runda nie została zakończona.
         ///
         ///Nie można utworzyć nowej..
         /// </summary>
-        internal static string MainWindow_LastRoundNotEnd {
-            get {
+        internal static string MainWindow_LastRoundNotEnd
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_LastRoundNotEnd", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to LG.
         /// </summary>
-        internal static string MainWindow_LG {
-            get {
+        internal static string MainWindow_LG
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_LG", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to L. gier.
         /// </summary>
-        internal static string MainWindow_LiczbaGier {
-            get {
+        internal static string MainWindow_LiczbaGier
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_LiczbaGier", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Punkty ligowe.
         /// </summary>
-        internal static string MainWindow_LeaguePoints {
-            get {
+        internal static string MainWindow_LeaguePoints
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_LeaguePoints", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to MB.
         /// </summary>
-        internal static string MainWindow_MB {
-            get {
+        internal static string MainWindow_MB
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_MB", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Minimalizuj.
         /// </summary>
-        internal static string MainWindow_Minimalizuj {
-            get {
+        internal static string MainWindow_Minimalizuj
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Minimalizuj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nazwa:.
         /// </summary>
-        internal static string MainWindow_NazwaTurnieju {
-            get {
+        internal static string MainWindow_NazwaTurnieju
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_NazwaTurnieju", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nazwa.
         /// </summary>
-        internal static string MainWindow_Nick {
-            get {
+        internal static string MainWindow_Nick
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Nick", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nie można wygenerować więcej rund.
         /// </summary>
-        internal static string MainWindow_NieMoznaWygenerowacWiecejRund {
-            get {
+        internal static string MainWindow_NieMoznaWygenerowacWiecejRund
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_NieMoznaWygenerowacWiecejRund", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wszystkie niezapisane dane obecnego turnieju zostaną utracone.
         ///Czy chcesz kontynuować?.
         /// </summary>
-        internal static string MainWindow_NiezapisaneDane {
-            get {
+        internal static string MainWindow_NiezapisaneDane
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_NiezapisaneDane", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nowa runda.
         /// </summary>
-        internal static string MainWindow_NowaRunda {
-            get {
+        internal static string MainWindow_NowaRunda
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_NowaRunda", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nowy....
         /// </summary>
-        internal static string MainWindow_Nowy {
-            get {
+        internal static string MainWindow_Nowy
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Nowy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Opcje.
         /// </summary>
-        internal static string MainWindow_Opcje {
-            get {
+        internal static string MainWindow_Opcje
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Opcje", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to O programie....
         /// </summary>
-        internal static string MainWindow_OProgramie {
-            get {
+        internal static string MainWindow_OProgramie
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_OProgramie", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Otwórz....
         /// </summary>
-        internal static string MainWindow_Otworz {
-            get {
+        internal static string MainWindow_Otworz
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Otworz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to €.
         /// </summary>
-        internal static string MainWindow_Payment {
-            get {
+        internal static string MainWindow_Payment
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Payment", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Czy na pewno chcesz przywrócić zaznaczonego gracza?.
         /// </summary>
-        internal static string MainWindow_PlayerActivate {
-            get {
+        internal static string MainWindow_PlayerActivate
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlayerActivate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Czy na pewno chcesz dezaktywować zaznaczonego gracza?.
         /// </summary>
-        internal static string MainWindow_PlayerDeactivate {
-            get {
+        internal static string MainWindow_PlayerDeactivate
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlayerDeactivate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Czy na pewno chcesz usunąć zaznaczonego gracza?.
         /// </summary>
-        internal static string MainWindow_PlayerDelete {
-            get {
+        internal static string MainWindow_PlayerDelete
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlayerDelete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Czy na pewno chcesz zdyskwalifikować zaznaczonego gracza?.
         /// </summary>
-        internal static string MainWindow_PlayerDisqualification {
-            get {
+        internal static string MainWindow_PlayerDisqualification
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlayerDisqualification", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Podana nazwa gracza już istnieje w tabeli.
         /// </summary>
-        internal static string MainWindow_PlayerExists {
-            get {
+        internal static string MainWindow_PlayerExists
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlayerExists", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Playoff&apos;y.
         /// </summary>
-        internal static string MainWindow_Playoffs {
-            get {
+        internal static string MainWindow_Playoffs
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Playoffs", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pliki graczy.
         /// </summary>
-        internal static string MainWindow_PlikiGraczy {
-            get {
+        internal static string MainWindow_PlikiGraczy
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlikiGraczy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pliki HTML.
         /// </summary>
-        internal static string MainWindow_PlikiHTML {
-            get {
+        internal static string MainWindow_PlikiHTML
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlikiHTML", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pliki turniejów.
         /// </summary>
-        internal static string MainWindow_PlikiTurniejow {
-            get {
+        internal static string MainWindow_PlikiTurniejow
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlikiTurniejow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pliki txt.
         /// </summary>
-        internal static string MainWindow_PlikiTXT {
-            get {
+        internal static string MainWindow_PlikiTXT
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_PlikiTXT", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pomoc.
         /// </summary>
-        internal static string MainWindow_Pomoc {
-            get {
+        internal static string MainWindow_Pomoc
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Pomoc", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Przelicz.
         /// </summary>
-        internal static string MainWindow_Przelicz {
-            get {
+        internal static string MainWindow_Przelicz
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Przelicz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Punkty.
         /// </summary>
-        internal static string MainWindow_Punkty {
-            get {
+        internal static string MainWindow_Punkty
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Punkty", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rank.
         /// </summary>
-        internal static string MainWindow_Rank {
-            get {
+        internal static string MainWindow_Rank
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Rank", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wczytanie graczy spowoduje wyresetowanie turnieju.
         ///Czy chcesz kontynuować?.
         /// </summary>
-        internal static string MainWindow_ResetTournament {
-            get {
+        internal static string MainWindow_ResetTournament
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_ResetTournament", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rundy.
         /// </summary>
-        internal static string MainWindow_Rundy {
-            get {
+        internal static string MainWindow_Rundy
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Rundy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rundy -&gt; TXT (tabela formatowana).
         /// </summary>
-        internal static string MainWindow_RundyTXTFormatted {
-            get {
+        internal static string MainWindow_RundyTXTFormatted
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_RundyTXTFormatted", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Średni rank. graczy:.
         /// </summary>
-        internal static string MainWindow_SredniRankGraczy {
-            get {
+        internal static string MainWindow_SredniRankGraczy
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_SredniRankGraczy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
-        internal static string MainWindow_Start {
-            get {
+        internal static string MainWindow_Start
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Start", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start TOP16.
         /// </summary>
-        internal static string MainWindow_StartPlayoffsTop16 {
-            get {
+        internal static string MainWindow_StartPlayoffsTop16
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_StartPlayoffsTop16", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start TOP8.
         /// </summary>
-        internal static string MainWindow_StartPlayoffsTop8 {
-            get {
+        internal static string MainWindow_StartPlayoffsTop8
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_StartPlayoffsTop8", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Statystyki.
         /// </summary>
-        internal static string MainWindow_Statistics {
-            get {
+        internal static string MainWindow_Statistics
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Statistics", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tabela wyników.
         /// </summary>
-        internal static string MainWindow_TabelaWynikow {
-            get {
+        internal static string MainWindow_TabelaWynikow
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_TabelaWynikow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tabela wyników -&gt; HTML.
         /// </summary>
-        internal static string MainWindow_TabelaWynikowHTML {
-            get {
+        internal static string MainWindow_TabelaWynikowHTML
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_TabelaWynikowHTML", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tabela wyników -&gt; TXT.
         /// </summary>
-        internal static string MainWindow_TabelaWynikowTXT {
-            get {
+        internal static string MainWindow_TabelaWynikowTXT
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_TabelaWynikowTXT", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tabela wyników -&gt; TXT (tabela formatowana).
         /// </summary>
-        internal static string MainWindow_TabelaWynikowTXTFormatted {
-            get {
+        internal static string MainWindow_TabelaWynikowTXTFormatted
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_TabelaWynikowTXTFormatted", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Top.
         /// </summary>
-        internal static string MainWindow_Top {
-            get {
+        internal static string MainWindow_Top
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Top", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Turniej.
         /// </summary>
-        internal static string MainWindow_Turniej {
-            get {
+        internal static string MainWindow_Turniej
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Turniej", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tworzenie rundy ręcznie.
         /// </summary>
-        internal static string MainWindow_TworzenieRundyRecznie {
-            get {
+        internal static string MainWindow_TworzenieRundyRecznie
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_TworzenieRundyRecznie", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ustawienia.
         /// </summary>
-        internal static string MainWindow_Ustawienia {
-            get {
+        internal static string MainWindow_Ustawienia
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Ustawienia", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Usuń.
         /// </summary>
-        internal static string MainWindow_Usun {
-            get {
+        internal static string MainWindow_Usun
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Usun", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Usuń ost. rundę.
         /// </summary>
-        internal static string MainWindow_UsunOstRunde {
-            get {
+        internal static string MainWindow_UsunOstRunde
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_UsunOstRunde", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wczytaj....
         /// </summary>
-        internal static string MainWindow_Wczytaj {
-            get {
+        internal static string MainWindow_Wczytaj
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Wczytaj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to W-R-P.
         /// </summary>
-        internal static string MainWindow_WRP {
-            get {
+        internal static string MainWindow_WRP
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_WRP", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wyszukaj ....
         /// </summary>
-        internal static string MainWindow_Wyszukaj {
-            get {
+        internal static string MainWindow_Wyszukaj
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Wyszukaj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zamknij.
         /// </summary>
-        internal static string MainWindow_Zamknij {
-            get {
+        internal static string MainWindow_Zamknij
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Zamknij", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zapisz.
         /// </summary>
-        internal static string MainWindow_Zapisz {
-            get {
+        internal static string MainWindow_Zapisz
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_Zapisz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zapisz jako....
         /// </summary>
-        internal static string MainWindow_ZapiszJako {
-            get {
+        internal static string MainWindow_ZapiszJako
+        {
+            get
+            {
                 return ResourceManager.GetString("MainWindow_ZapiszJako", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anuluj.
         /// </summary>
-        internal static string PlayerWindow_Anuluj {
-            get {
+        internal static string PlayerWindow_Anuluj
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_Anuluj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dane gracza.
         /// </summary>
-        internal static string PlayerWindow_DaneGracza {
-            get {
+        internal static string PlayerWindow_DaneGracza
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_DaneGracza", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Imię.
         /// </summary>
-        internal static string PlayerWindow_Imie {
-            get {
+        internal static string PlayerWindow_Imie
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_Imie", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nazwisko.
         /// </summary>
-        internal static string PlayerWindow_Nazwisko {
-            get {
+        internal static string PlayerWindow_Nazwisko
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_Nazwisko", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nazwa.
         /// </summary>
-        internal static string PlayerWindow_Nick {
-            get {
+        internal static string PlayerWindow_Nick
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_Nick", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pole &apos;Nazwa&apos; jest obowiązkowe.
         /// </summary>
-        internal static string PlayerWindow_PoleNazwaJestObowiązkowe {
-            get {
+        internal static string PlayerWindow_PoleNazwaJestObowiązkowe
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_PoleNazwaJestObowiązkowe", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pole &apos;Ranking&apos; musi być wartością liczbową (całkowitą).
         /// </summary>
-        internal static string PlayerWindow_PoleRankingMusiBycWartosciaLiczbową {
-            get {
+        internal static string PlayerWindow_PoleRankingMusiBycWartosciaLiczbową
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_PoleRankingMusiBycWartosciaLiczbową", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ranking.
         /// </summary>
-        internal static string PlayerWindow_Ranking {
-            get {
+        internal static string PlayerWindow_Ranking
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayerWindow_Ranking", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Finał.
         /// </summary>
-        internal static string PlayoffRoundComboBox_Final {
-            get {
+        internal static string PlayoffRoundComboBox_Final
+        {
+            get
+            {
                 return ResourceManager.GetString("PlayoffRoundComboBox_Final", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Błąd.
         /// </summary>
-        internal static string PM_Error {
-            get {
+        internal static string PM_Error
+        {
+            get
+            {
                 return ResourceManager.GetString("PM_Error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Informacja.
         /// </summary>
-        internal static string PM_Information {
-            get {
+        internal static string PM_Information
+        {
+            get
+            {
                 return ResourceManager.GetString("PM_Information", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nie.
         /// </summary>
-        internal static string PM_No {
-            get {
+        internal static string PM_No
+        {
+            get
+            {
                 return ResourceManager.GetString("PM_No", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
-        internal static string PM_Ok {
-            get {
+        internal static string PM_Ok
+        {
+            get
+            {
                 return ResourceManager.GetString("PM_Ok", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Uwaga.
         /// </summary>
-        internal static string PM_Warning {
-            get {
+        internal static string PM_Warning
+        {
+            get
+            {
                 return ResourceManager.GetString("PM_Warning", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tak.
         /// </summary>
-        internal static string PM_Yes {
-            get {
+        internal static string PM_Yes
+        {
+            get
+            {
                 return ResourceManager.GetString("PM_Yes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tylko pierwsza gra.
         /// </summary>
-        internal static string RoundControl_DrugaGra {
-            get {
+        internal static string RoundControl_DrugaGra
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_DrugaGra", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Drukuj rundę.
         /// </summary>
-        internal static string RoundControl_DrukujRunde {
-            get {
+        internal static string RoundControl_DrukujRunde
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_DrukujRunde", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edytuj.
         /// </summary>
-        internal static string RoundControl_Edytuj {
-            get {
+        internal static string RoundControl_Edytuj
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_Edytuj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz 1.
         /// </summary>
-        internal static string RoundControl_Gracz1 {
-            get {
+        internal static string RoundControl_Gracz1
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_Gracz1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz 2.
         /// </summary>
-        internal static string RoundControl_Gracz2 {
-            get {
+        internal static string RoundControl_Gracz2
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_Gracz2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nr.
         /// </summary>
-        internal static string RoundControl_Nr {
-            get {
+        internal static string RoundControl_Nr
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_Nr", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
-        internal static string RoundControl_OK {
-            get {
+        internal static string RoundControl_OK
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_OK", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Runda.
         /// </summary>
-        internal static string RoundControl_Runda {
-            get {
+        internal static string RoundControl_Runda
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_Runda", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wynik.
         /// </summary>
-        internal static string RoundControl_Wynik {
-            get {
+        internal static string RoundControl_Wynik
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundControl_Wynik", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz 1.
         /// </summary>
-        internal static string RoundTemplate_Gracz1 {
-            get {
+        internal static string RoundTemplate_Gracz1
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundTemplate_Gracz1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gracz 2.
         /// </summary>
-        internal static string RoundTemplate_Gracz2 {
-            get {
+        internal static string RoundTemplate_Gracz2
+        {
+            get
+            {
                 return ResourceManager.GetString("RoundTemplate_Gracz2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anuluj.
         /// </summary>
-        internal static string SettingsWindow_Anuluj {
-            get {
+        internal static string SettingsWindow_Anuluj
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_Anuluj", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Auto-zapis co rundę.
         /// </summary>
-        internal static string SettingsWindow_AutoSave {
-            get {
+        internal static string SettingsWindow_AutoSave
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_AutoSave", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Liczenie małych punktów (+/-) dla wyniku BYE:.
         /// </summary>
-        internal static string SettingsWindow_BYE {
-            get {
+        internal static string SettingsWindow_BYE
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_BYE", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to BYE tylko dla przegranych.
         /// </summary>
-        internal static string SettingsWindow_BYEDlaPrzegranych {
-            get {
+        internal static string SettingsWindow_BYEDlaPrzegranych
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_BYEDlaPrzegranych", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Opcje dla BYE&apos;a.
         /// </summary>
-        internal static string SettingsWindow_BYEOptions {
-            get {
+        internal static string SettingsWindow_BYEOptions
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_BYEOptions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Opcje.
         /// </summary>
-        internal static string SettingsWindow_Opcje {
-            get {
+        internal static string SettingsWindow_Opcje
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_Opcje", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Użyj losowego tiebreakera bezpośrednio po punktach (tylko do losowania rund).
         /// </summary>
-        internal static string SettingsWindow_RandomTieAfterPoints {
-            get {
+        internal static string SettingsWindow_RandomTieAfterPoints
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_RandomTieAfterPoints", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System &quot;kostki&quot;.
         /// </summary>
-        internal static string SettingsWindow_SystemKostki {
-            get {
+        internal static string SettingsWindow_SystemKostki
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_SystemKostki", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Oznacz BYE jako zaczynający.
         /// </summary>
-        internal static string SettingsWindow_SystemKostki_BYEHasDice {
-            get {
+        internal static string SettingsWindow_SystemKostki_BYEHasDice
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_SystemKostki_BYEHasDice", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wyłączony.
         /// </summary>
-        internal static string SettingsWindow_SystemKostki_Disabled {
-            get {
+        internal static string SettingsWindow_SystemKostki_Disabled
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_SystemKostki_Disabled", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pełny.
         /// </summary>
-        internal static string SettingsWindow_SystemKostki_Enabled {
-            get {
+        internal static string SettingsWindow_SystemKostki_Enabled
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_SystemKostki_Enabled", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tylko losowo.
         /// </summary>
-        internal static string SettingsWindow_SystemKostki_OnlyRandom {
-            get {
+        internal static string SettingsWindow_SystemKostki_OnlyRandom
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_SystemKostki_OnlyRandom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tabela wyników i rundy na oddzielnych zakładkach (po zmianie opcji należy zrestartować program).
         /// </summary>
-        internal static string SettingsWindow_TabelaWynikowIRundy {
-            get {
+        internal static string SettingsWindow_TabelaWynikowIRundy
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_TabelaWynikowIRundy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Widoczność kolumn.
         /// </summary>
-        internal static string SettingsWindow_WidocznoscKolumn {
-            get {
+        internal static string SettingsWindow_WidocznoscKolumn
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_WidocznoscKolumn", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zamknij.
         /// </summary>
-        internal static string SettingsWindow_Zamknij {
-            get {
+        internal static string SettingsWindow_Zamknij
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_Zamknij", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zapisz.
         /// </summary>
-        internal static string SettingsWindow_Zapisz {
-            get {
+        internal static string SettingsWindow_Zapisz
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsWindow_Zapisz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rozkład frakcji.
         /// </summary>
-        internal static string StatisticsWindow_RozkladStolic {
-            get {
+        internal static string StatisticsWindow_RozkladStolic
+        {
+            get
+            {
                 return ResourceManager.GetString("StatisticsWindow_RozkladStolic", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rozkład frakcji TOP 16.
         /// </summary>
-        internal static string StatisticsWindow_RozkladStolicTop {
-            get {
+        internal static string StatisticsWindow_RozkladStolicTop
+        {
+            get
+            {
                 return ResourceManager.GetString("StatisticsWindow_RozkladStolicTop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Statystyki.
         /// </summary>
-        internal static string StatisticsWindow_Title {
-            get {
+        internal static string StatisticsWindow_Title
+        {
+            get
+            {
                 return ResourceManager.GetString("StatisticsWindow_Title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pauza.
         /// </summary>
-        internal static string TimerControl_Pauza {
-            get {
+        internal static string TimerControl_Pauza
+        {
+            get
+            {
                 return ResourceManager.GetString("TimerControl_Pauza", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Restart.
         /// </summary>
-        internal static string TimerControl_Restart {
-            get {
+        internal static string TimerControl_Restart
+        {
+            get
+            {
                 return ResourceManager.GetString("TimerControl_Restart", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
-        internal static string TimerControl_Start {
-            get {
+        internal static string TimerControl_Start
+        {
+            get
+            {
                 return ResourceManager.GetString("TimerControl_Start", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ustaw czas [minuty].
         /// </summary>
-        internal static string TimerControl_UstawCzas {
-            get {
+        internal static string TimerControl_UstawCzas
+        {
+            get
+            {
                 return ResourceManager.GetString("TimerControl_UstawCzas", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zoom.
         /// </summary>
-        internal static string TimerControl_Zoom {
-            get {
+        internal static string TimerControl_Zoom
+        {
+            get
+            {
                 return ResourceManager.GetString("TimerControl_Zoom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Błąd generowania klasyfikacji końcowej.
         /// </summary>
-        internal static string Tournament_ErrorGen {
-            get {
+        internal static string Tournament_ErrorGen
+        {
+            get
+            {
                 return ResourceManager.GetString("Tournament_ErrorGen", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Błąd otwierania pliku graczy.
         ///Ścieżka: {0}
         ///{1}.
         /// </summary>
-        internal static string Tournament_ErrorOpenPlayers {
-            get {
+        internal static string Tournament_ErrorOpenPlayers
+        {
+            get
+            {
                 return ResourceManager.GetString("Tournament_ErrorOpenPlayers", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Błąd otwierania pliku turnieju.
         ///Ścieżka: {0}
         ///{1}.
         /// </summary>
-        internal static string Tournament_ErrorOpenTournament {
-            get {
+        internal static string Tournament_ErrorOpenTournament
+        {
+            get
+            {
                 return ResourceManager.GetString("Tournament_ErrorOpenTournament", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nie ustawiono wszystkich wyników.
         /// </summary>
-        internal static string Tournament_ErrorPoints {
-            get {
+        internal static string Tournament_ErrorPoints
+        {
+            get
+            {
                 return ResourceManager.GetString("Tournament_ErrorPoints", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Błąd zapisu pliku graczy.
         ///Ścieżka: {0}
         ///{1}.
         /// </summary>
-        internal static string Tournament_ErrorSavePlayers {
-            get {
+        internal static string Tournament_ErrorSavePlayers
+        {
+            get
+            {
                 return ResourceManager.GetString("Tournament_ErrorSavePlayers", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Błąd zapisu pliku turnieju.
         ///Ścieżka: {0}
         ///{1}.
         /// </summary>
-        internal static string Tournament_ErrorSaveTournament {
-            get {
+        internal static string Tournament_ErrorSaveTournament
+        {
+            get
+            {
                 return ResourceManager.GetString("Tournament_ErrorSaveTournament", resourceCulture);
             }
         }

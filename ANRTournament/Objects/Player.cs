@@ -53,6 +53,7 @@ namespace ANRTournament.Objects
         private bool addPlayerToLastRound = false;
         private decimal sos = 0.0m;
         private decimal extsos = 0.0m;
+        private bool groupPointWinner = false;
 
         private int runnerwins = 0;
         private int corpowins = 0;
@@ -535,6 +536,22 @@ namespace ANRTournament.Objects
                 {
                     this.extsos = value;
                     NotifyPropertyChanged("Extended Extsos");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Head to Head
+        /// </summary>
+        public bool GroupPointWinner
+        {
+            get { return this.groupPointWinner; }
+            set
+            {
+                if (value != this.groupPointWinner)
+                {
+                    this.groupPointWinner = value;
+                    NotifyPropertyChanged("GroupPointWinner");
                 }
             }
         }
