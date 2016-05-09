@@ -911,7 +911,7 @@ namespace ANRTournament
                 strBuilder.AppendFormat("{0};", player.RunnerIdentity);
                 strBuilder.AppendFormat("{0};", player.GamesCount);
                 strBuilder.AppendFormat("{0};", player.Points.ToString());
-                strBuilder.AppendFormat("{0};", player.Bucholz.ToString());
+                strBuilder.AppendFormat("{0};", player.Sos.ToString());
                 strBuilder.AppendFormat("{0};", player.SmallPointsPlusMinus);
                 strBuilder.AppendFormat("{0};", player.GamesWinDrawLoose);
                 strBuilder.AppendLine();
@@ -959,7 +959,7 @@ namespace ANRTournament
                                          runnerID.PadRight(43, ' '),
                                          player.GamesCount.ToString().PadLeft(2, ' '),
                                          player.Points.ToString().PadLeft(6, ' '),
-                                         player.Bucholz.ToString().PadLeft(3, ' '),
+                                         player.Sos.ToString().PadLeft(3, ' '),
                                          player.SmallPointsPlusMinus.ToString().PadLeft(5, ' '),
                                          player.GamesWinDrawLoose.ToString().PadLeft(7, ' '));
                 strBuilder.AppendLine();
@@ -1019,7 +1019,7 @@ namespace ANRTournament
                 strBuilder.AppendLine(string.Format("    <td>{0}</td>", runnerID));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", player.GamesCount.ToString()));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", player.Points));
-                strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", player.Bucholz.ToString()));
+                strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", player.Sos.ToString()));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", player.SmallPointsPlusMinus));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", player.GamesWinDrawLoose));
                 strBuilder.AppendLine("</tr>");
@@ -1119,7 +1119,7 @@ namespace ANRTournament
                                          runnerID.PadRight(43, ' '),
                                          result.Player.GamesCount.ToString().PadLeft(2, ' '),
                                          result.Player.Points.ToString().PadLeft(6, ' '),
-                                         result.Player.Bucholz.ToString().PadLeft(3, ' '),
+                                         result.Player.Sos.ToString().PadLeft(3, ' '),
                                          result.Player.SmallPointsPlusMinus.ToString().PadLeft(5, ' '),
                                          result.Player.GamesWinDrawLoose.ToString().PadLeft(7, ' '));
                 strBuilder.AppendLine();
@@ -1179,7 +1179,7 @@ namespace ANRTournament
                 strBuilder.AppendLine(string.Format("    <td>{0}</td>", runnerID));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", result.Player.GamesCount.ToString()));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", result.Player.Points));
-                strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", result.Player.Bucholz.ToString()));
+                strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", result.Player.Sos.ToString()));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", result.Player.SmallPointsPlusMinus));
                 strBuilder.AppendLine(string.Format("    <td align=\"center\">{0}</td>", result.Player.GamesWinDrawLoose));
                 strBuilder.AppendLine("</tr>");
