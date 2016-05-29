@@ -918,6 +918,7 @@ namespace ANRTournament.Objects
                         lastGame.Player2Id = playerToAdd.Id;
                         lastGame.Player2RaceCorpo = playerToAdd.RaceCorpo;
                         lastGame.Player2RaceRunner = playerToAdd.RaceRunner;
+                        this.allGames.Remove(this.allGames.Where(p => p.Player1Id == playerToAdd.Id && p.Player1Id == lastGame.Player1Id).First());
                     }
                     else
                     {
@@ -931,6 +932,7 @@ namespace ANRTournament.Objects
                             Number = lastGame.Number + 1,
                         };
                         lastRound.Games.Add(game);
+                        this.allGames.Remove(this.allGames.Where(g => g.Player1Id == playerToAdd.Id && g.IsBYE == true).First());
                     }
 
                 }
