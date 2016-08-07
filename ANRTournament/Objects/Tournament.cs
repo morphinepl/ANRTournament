@@ -1235,7 +1235,6 @@ namespace ANRTournament.Objects
             }
                 //przeliczenie miejsc z uwzględnieniem przeciwników
                 IEnumerable<Player> sortedplayers = this.pointstable.OrderByDescending(p => p.Points)
-                                                                .ThenByDescending(p => p.GroupPointWinner)
                                                                 .ThenByDescending(p => p.Sos)
                                                                 .ThenByDescending(p => p.Extsos)
                                                                 .ThenByDescending(p => p.LastTieBreak);
