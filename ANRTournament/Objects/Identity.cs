@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +25,7 @@ namespace ANRTournament.Objects
             new CorpoIdentity() { IdentityName = "Industrial Genomics: Growing Solutions", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
             new CorpoIdentity() { IdentityName = "Jinteki Biotech: Life Imagined", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
             new CorpoIdentity() { IdentityName = "Jinteki: Personal Evolution", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
+            new CorpoIdentity() { IdentityName = "Jinteki: Potential unleashed", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
             new CorpoIdentity() { IdentityName = "Jinteki: Replicating Perfection", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
             new CorpoIdentity() { IdentityName = "Nisei Division: The Next Generation", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
             new CorpoIdentity() { IdentityName = "Pālanā Foods: Sustainable Growth", Race = RaceCorpo.Jinteki, ForegroundColor = Brushes.Red },
@@ -32,6 +33,7 @@ namespace ANRTournament.Objects
 
             new CorpoIdentity() { IdentityName = "Haarpsichord Studios: Entertainment Unleashed", Race = RaceCorpo.NBN, ForegroundColor = Brushes.Yellow },
             new CorpoIdentity() { IdentityName = "Harishchandra Ent.: Where You're the Star", Race = RaceCorpo.NBN, ForegroundColor = Brushes.Yellow },
+            new CorpoIdentity() { IdentityName = "NBN: Controlling the message", Race = RaceCorpo.NBN, ForegroundColor = Brushes.Yellow },
             new CorpoIdentity() { IdentityName = "NBN: Making News", Race = RaceCorpo.NBN, ForegroundColor = Brushes.Yellow },
             new CorpoIdentity() { IdentityName = "NBN: The World is Yours*", Race = RaceCorpo.NBN, ForegroundColor = Brushes.Yellow },
             new CorpoIdentity() { IdentityName = "Near-Earth Hub: Broadcast Center", Race = RaceCorpo.NBN, ForegroundColor = Brushes.Yellow },
@@ -45,6 +47,7 @@ namespace ANRTournament.Objects
             new CorpoIdentity() { IdentityName = "GRNDL: Power Unleashed", Race = RaceCorpo.WeylandConsortium, ForegroundColor = Brushes.LightGreen },
             new CorpoIdentity() { IdentityName = "Titan Transnational: Investing In Your Future", Race = RaceCorpo.WeylandConsortium, ForegroundColor = Brushes.LightGreen },
             new CorpoIdentity() { IdentityName = "Weyland Consortium: Because We Built It", Race = RaceCorpo.WeylandConsortium, ForegroundColor = Brushes.LightGreen },
+            new CorpoIdentity() { IdentityName = "Weyland Consortium: Builder of nations", Race = RaceCorpo.WeylandConsortium, ForegroundColor = Brushes.LightGreen },
             new CorpoIdentity() { IdentityName = "Weyland Consortium: Building a Better World", Race = RaceCorpo.WeylandConsortium, ForegroundColor = Brushes.LightGreen }, 
         };
 
@@ -122,6 +125,8 @@ namespace ANRTournament.Objects
             new RunnerIdentity() { IdentityName = "Edward Kim: Humanity's Hammer", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
             new RunnerIdentity() { IdentityName = "MaxX: Maximum Punk Rock", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
             new RunnerIdentity() { IdentityName = "Noise: Hacker Extraordinaire", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
+            new RunnerIdentity() { IdentityName = "Null: Whistleblower", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
+            new RunnerIdentity() { IdentityName = "Omar Keung: Conspiracy Theorist", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
             new RunnerIdentity() { IdentityName = "Quetzal: Free Spirit", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
             new RunnerIdentity() { IdentityName = "Reina Roja: Freedom Fighter", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange},
             new RunnerIdentity() { IdentityName = "Valencia Estevez: The Angel of Cayambe", Race = RaceRunner.Anarch, ForegroundColor = Brushes.Orange },
@@ -132,6 +137,7 @@ namespace ANRTournament.Objects
             new RunnerIdentity() { IdentityName = "Gabriel Santiago: Consummate Professional", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
             new RunnerIdentity() { IdentityName = "Iain Stirling: Retired Spook", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
             new RunnerIdentity() { IdentityName = "Ken \"Express\" Tenma: Disappeared Clone", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
+            new RunnerIdentity() { IdentityName = "Khan: Savvy Skiptracer", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
             new RunnerIdentity() { IdentityName = "Laramy Fisk: Savvy Investor", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
             new RunnerIdentity() { IdentityName = "Leela Patel: Trained Pragmatist", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
             new RunnerIdentity() { IdentityName = "Nero Severn: Information Broker", Race = RaceRunner.Criminal, ForegroundColor = Brushes.LightBlue },
