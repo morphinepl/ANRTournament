@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,8 +36,9 @@ namespace ANRTournament.Objects
         private RaceRunner player1racerunner = RaceRunner.NotSet;
         private RaceRunner player2racerunner = RaceRunner.NotSet;
 
-        private int player1score = 1;
-        private int player2score = 1;
+        //both where = 1
+        private int player1score = 0;
+        private int player2score = 0;
 
         private int player1score1 = 0;
         private int player1score2 = 0;
@@ -407,8 +408,8 @@ namespace ANRTournament.Objects
 
             if (this.isbye)
             {
-                //BYE - 4 dużych punktów, 0 małych punktów i buholz 0
-                player1score = 4;
+                //BYE - 6 dużych punktów, 0 małych punktów i buholz 0
+                player1score = 6;
                 player2score = 0;
                 player1score1 = 0;
                 player1score2 = 0;
@@ -440,21 +441,21 @@ namespace ANRTournament.Objects
                 //pierwsza gra
                 if (this.player1score1 > this.player2score1)
                 {
-                    this.player1score += 2;
+                    this.player1score += 3;
                 }
                 else
                 {
-                    this.player2score += 2;
+                    this.player2score += 3;
                 }
 
                 //druga gra
                 if (this.player1score2 > this.player2score2)
                 {
-                    this.player1score += 2;
+                    this.player1score += 3;
                 }
                 else
                 {
-                    this.player2score += 2;
+                    this.player2score += 3;
                 }
 
                 return;
@@ -481,12 +482,12 @@ namespace ANRTournament.Objects
             {
                 if (this.player1score1 == 10 || this.player1score2 == 10)
                 {
-                    this.player1score += 2;
+                    this.player1score += 3;
                 }
 
                 if (this.player2score1 == 10 || this.player2score2 == 10)
                 {
-                    this.player2score += 2;
+                    this.player2score += 3;
                 }
 
                 //Jeśli któras gra jest deaktywowana to nie dodajemy punktów poniżej
@@ -502,11 +503,11 @@ namespace ANRTournament.Objects
                     }
                     else if (this.player1score2 > this.player2score2)
                     {
-                        this.player1score += 1;
+                        this.player1score += 2;
                     }
                     else
                     {
-                        this.player2score += 1;
+                        this.player2score += 2;
                     }
                 }
 
@@ -520,11 +521,11 @@ namespace ANRTournament.Objects
                     }
                     else if (this.player1score1 > this.player2score1)
                     {
-                        this.player1score += 1;
+                        this.player1score += 2;
                     }
                     else
                     {
-                        this.player2score += 1;
+                        this.player2score += 2;
                     }
                 }
 
@@ -549,11 +550,11 @@ namespace ANRTournament.Objects
                 }
                 else if (this.player1score1 + this.player1score2 > this.player2score1 + this.player2score2)
                 {
-                    this.player1score += 1;
+                    this.player1score += 2;
                 }
                 else
                 {
-                    this.player2score += 1;
+                    this.player2score += 2;
                 }
 
                 return;
