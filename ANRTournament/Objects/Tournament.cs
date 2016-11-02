@@ -1051,7 +1051,7 @@ namespace ANRTournament.Objects
 
                 if (player.SuperBYE)
                 {
-                    points += 4;
+                    points += 6;
                     gameswin++;
                     smallpointsplus += 20;
                     runnerwins++;
